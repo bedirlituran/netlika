@@ -51,7 +51,7 @@ const Card = ({ icon, stat, orta, asagi,link,urlip }) => {
 
   return (
     <div className="font-turan -mt-2 p-2 w-[350px] lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0 cursor-pointer md:flex md:flex-nowrap rounded-2xl flex flex-col justify-center items-center">
-      <div className="h-[350px] w-[350px] md:w-full md:flex flex justify-center items-center placeholder:first:group rounded-2xl bg-gray-200 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 hover:bg-red-200 hover:text-slate-100 transition-all duration-500 shadow-xl">
+      <div className="h-full w-full md:w-full md:flex flex justify-center items-center placeholder:first:group rounded-2xl bg-gray-200 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 hover:bg-red-200 hover:text-slate-100 transition-all duration-500 shadow-xl">
         <div className="flex flex-col gap-3 mx-auto max-w-xs px-8 w-[260px] flex-wrap">
           <div className="flex flex-row gap-7 items-center justify-center">
             {icons[icon]} {/* Icon prop'u kullan */}
