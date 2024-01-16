@@ -17,6 +17,13 @@ const CardingSlider = () => {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
@@ -27,7 +34,7 @@ const CardingSlider = () => {
   };
 
   return (
-    <div className="my-5">
+    <div className="my-5 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         <Slider ref={sliderRef} {...sliderSettings}>
           <div className="outline-none focus:outline-none">
@@ -52,9 +59,9 @@ const CardingSlider = () => {
           </div>
           {/* İhtiyaca göre daha fazla kart ekleyebilirsiniz */}
         </Slider>
-        <div className="flex items-center justify-center gap-24  mt-8">
+        <div className="flex items-center justify-center gap-28 mt-1 ">
           <BsChevronLeft className="text-4xl cursor-pointer" onClick={() => sliderRef.current.slickPrev()} />
-          <BsChevronRight className="text-4xl cursor-pointer" onClick={() => sliderRef.current.slickNext()} />
+          <BsChevronRight className="text-4xl cursor-pointer font-bold" onClick={() => sliderRef.current.slickNext()} />
         </div>
       </div>
     </div>

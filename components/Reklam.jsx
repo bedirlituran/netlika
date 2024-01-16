@@ -5,7 +5,7 @@ const Reklam = () => {
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-4 mt-20  w-full p-4  ">
-        <div className="md:flex basis-1/2 justify-center items-center ">
+        <div className="md:flex basis-1/2 flex justify-center items-center ">
           <Image
             src="/image/iptv.webp"
              width={700}
@@ -13,7 +13,7 @@ const Reklam = () => {
            
             quality={75}
             alt="alt"
-            className="object-cover w-auto h-auto rounded-2xl"
+            className="object-cover w-[400px] h-[400px] lg:w-[700px] lg:h-[700px] "
           />
         </div>
         <div className="lg:flex  basis-1/2 justify-center items-center m-auto flex-col space-y-8 text-center">
