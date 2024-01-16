@@ -10,12 +10,12 @@ import AnimatedLayout from "../components/AnimatedLayout";
 export default function Home() {
   return (
     <AnimatedLayout>
-      
-      <Carding />
+      <main className="overflow-hidden">
+        <Carding />
       <Xidmet />
       <Reklam />
       <WhatsAppButton />
-     
+      </main>
     </AnimatedLayout>
   );
 }

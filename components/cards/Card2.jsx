@@ -15,7 +15,7 @@ const Card2 = () => {
           height={350}
           alt=""
         
-          className="rounded-xl group-hover:scale-105  ease-in-out opacity-50 hover:opacity-100 transition duration-500"
+          className="w-auto h-auto rounded-xl group-hover:scale-105  ease-in-out opacity-50 hover:opacity-100 transition duration-500"
         />
       </div>
       <button

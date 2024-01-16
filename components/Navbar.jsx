@@ -23,7 +23,7 @@ const Navbar = () => {
               width={100}
               height={100}
               alt="alt"
-              className="bg-transparent object-cover rounded-2xl flex items-center justify-center "
+              className=" bg-transparent object-cover rounded-2xl flex items-center justify-center "
             />
           </div>
           <div className="hidden lg:flex lg:items-center lg:justify-center">

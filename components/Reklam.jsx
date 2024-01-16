@@ -13,7 +13,7 @@ const Reklam = () => {
            
             quality={75}
             alt="alt"
-            className="object-cover"
+            className="object-cover w-auto h-auto rounded-2xl"
           />
         </div>
         <div className="lg:flex  basis-1/2 justify-center items-center m-auto flex-col space-y-8 text-center">
