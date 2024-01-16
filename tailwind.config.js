@@ -6,11 +6,11 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        'turan': ['Roboto', 'sans-serif'],
-       },
-    },
+      extend: {
+        fontFamily: {
+          custom: ['Kanit', 'serif'],
+        },
+      },
   },
   plugins: [],
 }
