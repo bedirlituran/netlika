@@ -29,7 +29,7 @@ const Slide = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // 2 saniyede bir geçiş
+    }, 2000); // 2 saniyede bir geçiş
 
     return () => {
       clearInterval(interval);
@@ -63,13 +63,13 @@ const Slide = () => {
       id="default-carousel"
       className="relative w-full"
       data-carousel="slide"
-      onTouchStart={handleTouchStart}
+      onTouchStart={handleTouchStart} 
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       
     >
       {/* Carousel wrapper */}
-      <div className="relative h-[400px] overflow-hidden rounded-lg md:h-[500px] transition-all duration-700">
+      <div className="relative  min-w-full h-[400px] overflow-hidden rounded-lg md:h-[480px]">
         {/* Render the current slide */}
         {slides.map((slide, index) => (
           <div key={index} className={`duration-700 ease-in-out ${index === current ? '' : 'hidden'}`} data-carousel-item>

@@ -7,6 +7,12 @@ import { BiPhoneCall } from "react-icons/bi";
 import { CiMail } from "react-icons/ci";
 import ThemeComp from "./ThemeComp";
 import { useState } from "react";
+import { FaHome } from "react-icons/fa";
+import { BsPersonCircle } from "react-icons/bs";
+import { FaHandsHelping } from "react-icons/fa";
+import { RiPresentationFill } from "react-icons/ri";
+
+
 
 const Navbar = () => {
   const [isClick, setisClick] = useState(false);
@@ -15,41 +21,48 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className=" file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-18 sticky top-0 z-50">
-        <nav className="flex justify-between items-center lg:flex  lg:justify-between  h-18 lg:items-center sticky top-0 p-3 uppercase font-bold space-x-2 min-w-full lg:text-sm  opacity-95 " >
-          <div>
+      <div className=" file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl">
+        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3  font-custom  space-x-2 min-w-full lg:text-sm  opacity-95 " >
+          <Link href="/">
             <Image
               src="/image/logo.webp"
               width={100}
               height={100}
               alt="alt"
-              className="bg-transparent object-cover rounded-2xl "
+              className="cursor-pointer  hover:scale-110 bg-transparent rounded-md transition-all duration-500 "
             />
-          </div>
+          </Link>
           <div className="hidden lg:flex lg:items-center lg:justify-center">
-            <ul className="lg:flex lg:items-center lg:justify-between  lg:text-sm  lg:gap-8 ">
-              <li>
+            <ul className="flex items-center text-green-950 lg:text-xl lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
+              <li className="flex gap-2 items-center">
+              <FaHome size={20} />
                 <Link
                   href="/"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                   Ana Səhifə
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+              <BsPersonCircle size={20}/>
+
                 <Link
                   href="/haqqında"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                   Haqqında
                 </Link>
               </li>
-              <li>
+              <li className="flex gap-2 items-center">
+              <FaHandsHelping size={20} />
+
                 <Link
                   href="/xidmətlər"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                   Xidmətlər
                 </Link>
               </li>
-              <li>
+              <li className="flex gap-2 items-center">
+              <RiPresentationFill size={20} />
+
                 <Link
                   href="/layihələr"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
