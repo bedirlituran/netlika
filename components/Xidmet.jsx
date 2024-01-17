@@ -6,11 +6,11 @@ import Card4 from "./cards/Card4";
 const Xidmet = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center m-auto bg-gray-300 min-h-[600px] shadow-2xl p-3 mt-4">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-2">
-          Xidmətlərimiz
+      <div className="flex flex-col items-center justify-center m-auto bg-gray-50 min-h-[500px] shadow-2xl p-3 mt-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-2">
+          Xidmətlər
         </h1>
-        <p className="font-turan font-light text-2xl sm:text-3xl md:text-4xl my-2 lg:my-5">
+        <p className="font-turan font-light text-2xl sm:text-3xl md:text-3xl my-2 lg:my-5">
           Sayt üzərindən sifariş
         </p>
 

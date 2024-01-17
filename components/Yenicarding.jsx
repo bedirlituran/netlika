@@ -7,12 +7,14 @@ import Link from "next/link";
 const Yenicarding = () => {
   return (
     <div>
-      
+      <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-2 text-center mt-6'>Kampaniyalar</h1>
 <div className="flex-wrap items-center justify-center gap-8 font-custom text-center sm:flex">
-    <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-800">
+
+    <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-800 ">
+       
         <div className="flex-shrink-0">
             <div className="flex items-center justify-center w-12 h-12 mx-auto">
-            <PiTelevisionSimpleBold size={70} color='blue'/>
+            <PiTelevisionSimpleBold size={80} color='red'/>
             </div>
         </div>
         <h3 className="py-4 text-2xl font-bold text-gray-700 sm:text-xl dark:text-white">
@@ -34,7 +36,7 @@ const Yenicarding = () => {
     <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 sm:mt-16 md:mt-20 lg:mt-24 dark:bg-gray-800">
         <div className="flex-shrink-0">
             <div className="flex items-center justify-center w-12 h-12 mx-auto ">
-            <FaInternetExplorer size={70} color='blue'/>
+            <FaInternetExplorer size={80} color='yellow'/>
             </div>
         </div>
         <h3 className="py-4 text-2xl font-bold text-gray-700 sm:text-xl dark:text-white">
@@ -56,7 +58,7 @@ const Yenicarding = () => {
     <div className="w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-800">
         <div className="flex-shrink-0">
             <div className="flex items-center justify-center w-12 h-12 mx-auto">
-            <SiSmartthings size={70} color='blue'/>
+            <SiSmartthings size={80} color='green'/>
             </div>
         </div>
         <h3 className="py-4 text-2xl font-bold text-gray-700 sm:text-xl dark:text-white">

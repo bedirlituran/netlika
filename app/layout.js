@@ -3,7 +3,8 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Providers from './provider'
 import Footer from '../components/Footer'
-import Slide from "../components/Slide"
+
+
 
 
 
@@ -22,7 +23,6 @@ export default function RootLayout({ children }) {
       
         <Providers>
         <Navbar/>
-          <Slide/>
           {children}
           <Footer/>
         </Providers>
