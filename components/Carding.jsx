@@ -34,7 +34,7 @@ const CardingSlider = () => {
   };
 
   return (
-    <div className="my-5 overflow-hidden">
+    <div className="my-5 overflow-x-hidden">
       <div className="max-w-[1400px] mx-auto">
         <Slider ref={sliderRef} {...sliderSettings}>
           <div className="outline-none focus:outline-none">

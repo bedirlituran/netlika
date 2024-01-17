@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar'
 import Providers from './provider'
 import Footer from '../components/Footer'
 import Slide from "../components/Slide"
+import AnimatedLayout from "../components/AnimatedLayout";
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,12 +20,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
     
       <body className={`${inter} overflow-x-hidden`}>
+      <AnimatedLayout>
         <Providers>
         <Navbar/>
           <Slide/>
           {children}
           <Footer/>
         </Providers>
+        </AnimatedLayout>
         </body>
     </html>
   )
