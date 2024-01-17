@@ -10,10 +10,9 @@ const Reklam = () => {
             src="/image/iptv.webp"
              width={700}
             height={700}
-           
             quality={75}
             alt="alt"
-            className="object-cover w-[400px] h-[400px] lg:w-[700px] lg:h-[700px] "
+            className="object-cover w-[400px] h-[400px] lg:w-[550px] lg:h-[550px] "
           />
         </div>
         <div className="lg:flex  basis-1/2 justify-center items-center m-auto flex-col space-y-8 text-center">
