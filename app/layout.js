@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar'
 import Providers from './provider'
 import Footer from '../components/Footer'
 import Slide from "../components/Slide"
-import AnimatedLayout from "../components/AnimatedLayout";
 
 
 
@@ -19,15 +18,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     
-      <body className={`${inter} overflow-x-hidden`}>
-      <AnimatedLayout>
+      <body className={`${inter} `}>
+      
         <Providers>
         <Navbar/>
           <Slide/>
           {children}
           <Footer/>
         </Providers>
-        </AnimatedLayout>
+      
         </body>
     </html>
   )

@@ -3,20 +3,24 @@ import Xidmet from "../components/Xidmet";
 import Reklam from "../components/Reklam";
 import WhatsAppButton from "../components/Whatsapp";
 import Yenicarding from "../components/Yenicarding";
-import Carding from "@/components/Carding";
+import AnimatedLayout from "../components/AnimatedLayout";
+
+
 
 
 
 export default function Home() {
   return (
     
-      <main>
-      <Yenicarding />
-      <Carding />
+      <AnimatedLayout>
+        <main>
+        <Yenicarding />
       <Xidmet />
       <Reklam />
       <WhatsAppButton />
-      </main>
+        </main>
+      
+      </AnimatedLayout>
     
   );
 }
