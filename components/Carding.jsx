@@ -1,14 +1,13 @@
-"use client";
-import React, { useRef } from 'react';
-import Card from './Card';
+"use client"
+// CardingSlider.js
+import React from 'react';
 import Slider from 'react-slick';
+import Card from './Card';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const CardingSlider = () => {
-  const sliderRef = useRef(null);
-
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -20,50 +19,40 @@ const CardingSlider = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
         },
       },
     ],
   };
 
   return (
-    <div className="my-5 overflow-x-hidden">
-      <div className="max-w-[1400px] mx-auto">
-        <Slider ref={sliderRef} {...sliderSettings}>
-          <div className="outline-none focus:outline-none">
-            <div className="p-2">
-              <Card icon="tv" stat="tv" orta="reqemsal" asagi="kanal" />
-            </div>
-          </div>
-          <div className="outline-none focus:outline-none">
-            <div className="p-2">
-              <Card icon="internet" stat="internet" orta="tarif" asagi="kompaniya" />
-            </div>
-          </div>
-          <div className="outline-none focus:outline-none">
-            <div className="p-2">
-              <Card icon="iptv" stat="iptv" orta="gammatv" asagi="gamma" />
-            </div>
-          </div>
-          <div className="outline-none focus:outline-none">
-            <div className="p-2">
-              <Card icon="Odeme" stat="Odeme" orta="million" asagi="emanat" />
-            </div>
-          </div>
-          {/* İhtiyaca göre daha fazla kart ekleyebilirsiniz */}
-        </Slider>
-        <div className="flex items-center justify-center gap-28 mt-1 ">
-          <BsChevronLeft className="text-4xl cursor-pointer" onClick={() => sliderRef.current.slickPrev()} />
-          <BsChevronRight className="text-4xl cursor-pointer font-bold" onClick={() => sliderRef.current.slickNext()} />
+    <div className="container mx-auto my-5 sm:my-10">
+      <Slider {...sliderSettings}>
+        <div className="px-2">
+          <Card icon="tv" stat="tv" orta="reqemsal" asagi="kanal" />
         </div>
-      </div>
+        <div className="px-2">
+          <Card icon="internet" stat="internet" orta="tarif" asagi="kompaniya" />
+        </div>
+        <div className="px-2">
+          <Card icon="iptv" stat="iptv" orta="gammatv" asagi="gamma" />
+        </div>
+        <div className="px-2">
+          <Card icon="Odeme" stat="Odeme" orta="million" asagi="emanat" />
+        </div>
+        {/* İhtiyaca göre daha fazla kart ekleyebilirsiniz */}
+      </Slider>
     </div>
   );
 };

@@ -40,7 +40,7 @@ const Slide = () => {
   };
 
   return (
-    <div className='max-w-[1400px] w-screen mx-auto relative'>
+    <div className='max-w-[1400px] w-full mx-auto relative'>
       <Slider ref={sliderRef} {...sliderSettings}>
         {slides.map((slide, index) => (
           <div key={index} className='w-full h-[400px] lg:h-[620px] relative'>
@@ -48,19 +48,6 @@ const Slide = () => {
           </div>
         ))}
       </Slider>
-
-      
-
-      <div className=' overflow-x-hidden'>
-        <BsChevronLeft
-          className='absolute top-1/2 left-4 text-5xl text-black cursor-pointer hover:text-gray-500 duration-500'
-          onClick={() => sliderRef.current.slickPrev()}
-        />
-        <BsChevronRight
-          className='absolute top-1/2 right-4 text-5xl text-black cursor-pointer hover:text-gray-500 duration-500'
-          onClick={() => sliderRef.current.slickNext()}
-        />
-      </div>
     </div>
   );
 };
