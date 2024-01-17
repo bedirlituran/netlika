@@ -6,7 +6,7 @@ const Carding = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center gap-6 mx-auto my-5 flex-col lg:flex-row">
+      <div className="flex items-center justify-center gap-4 mx-auto my-5 flex-col lg:flex-row">
         <div>
           <Card icon="tv" stat="tv" orta='reqemsal' asagi='kanal' />
         </div>
