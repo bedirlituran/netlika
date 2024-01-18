@@ -8,7 +8,7 @@ module.exports = {
   theme: {
       extend: {
         fontFamily: {
-          custom: ['Kanit', 'serif'],
+          custom: ['Roboto Mono', 'monospace'],
         },
       },
   },

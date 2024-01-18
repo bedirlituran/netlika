@@ -3,7 +3,7 @@ import React from 'react';
 
 const IPTVComponent = () => {
   return (
-    <div className="bg-gray-100 p-8 rounded-md shadow-md">
+    <div className="font-custom bg-gray-100 p-8 rounded-md shadow-md">
       <h1 className="text-3xl font-bold mb-6">Gammanet - İPTV xidməti </h1>
       <p className="text-lg mb-4">
         Gammanet, İPTV (Internet Protocol Television) təqdim edən bir şirkətdir. İPTV, internet protokolu əsasında təqdim edilən televiziyaya verilən addır.

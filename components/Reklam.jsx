@@ -4,7 +4,7 @@ import Button from "./buttons/button";
 const Reklam = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-4 mt-20  w-full p-4  ">
+      <div className="flex flex-col lg:flex-row gap-4 mt-20  w-full p-4 font-custom ">
         <div className="md:flex basis-1/2 flex justify-center items-center ">
           <Image
             src="/image/iptv.webp"

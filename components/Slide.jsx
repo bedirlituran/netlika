@@ -13,7 +13,7 @@ const Header = () => {
           <path d="M50 0H100L50 100H0L50 0Z" />
         </svg>
         <img
-          className="object-cover object-center w-full h-[300px] rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
+          className="object-cover object-center w-full h-[300px] rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-[460px]"
           src="/image/slide1.webp"
           alt=""
         />
@@ -32,7 +32,7 @@ const Header = () => {
             </span>
           </h2>
           <p className="pr-5 mb-5 text-base text-gray-700 md:text-lg">
-          "İnovativ texnologiya və əyləncənin bir araya gəldiyi Gammanet TV, ən yüksək keyfiyyətli yayım təcrübəsini təqdim edir. Sınırsız əyləncəni kəşf edin, arzuladığınız içerikləri bizimlə yaşayın!"
+           "İnovativ texnologiya və əyləncənin bir araya gəldiyi Gammanet TV, ən yüksək keyfiyyətli yayım təcrübəsini təqdim edir. Sınırsız əyləncəni kəşf edin, arzuladığınız içerikləri bizimlə yaşayın!"
           </p>
           <div className="flex items-center">
             <a

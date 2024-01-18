@@ -5,7 +5,7 @@ import Head from "next/head";
 
 const ReqemsalTV = () => {
   return (
-    <div className="container mx-auto p-8 mt-3 space-y-7">
+    <div className="container font-custom mx-auto p-8 mt-3 space-y-7">
       <Head>
         <title>Reqemsal TV</title>
         <meta name="description" content="Azerbaycan'da reqemsal TV hakkında bilgi." />

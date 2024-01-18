@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className='hover:bg-green-500 hover:text-white hover:shadow-2xl hover:scale-110 transition-all duration-500'
+    <div className='font-custom hover:bg-green-500 hover:text-white hover:shadow-2xl hover:scale-110 transition-all duration-500'
       style={{
         textAlign: 'center',
         display: 'flex',

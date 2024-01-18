@@ -1,5 +1,5 @@
-"use client";
 
+"use client"
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,11 +17,10 @@ import { RiPresentationFill } from "react-icons/ri";
 const Navbar = () => {
   const [isClick, setisClick] = useState(false);
   const toggleNavbar = () => {
-    setisClick(!isClick);
-  };
+    setisClick(!isClick)};
   return (
     <>
-      <div className=" file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
+      <div className="font-custom file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
         <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3  font-custom  space-x-2 min-w-full lg:text-sm  opacity-95 " >
           <Link href="/">
             <Image
@@ -78,16 +77,16 @@ const Navbar = () => {
             
 
             <BiPhoneCall
-              size={25}
+              size={20}
               color="black"
               className="hidden lg:block transition-all duration-500 cursor-pointer hover:text-blue-500"
             />
 
-<a href="tel:+994126104888" className="text-black hover:text-blue-500 cursor-pointer hidden lg:block transition-all duration-500">
+<a href="tel:+994126104888" className="text-black hover:text-ble-500 cursor-pointer hidden lg:block transition-all duration-500">
   (012) 610 48 88
 </a>
             <CiMail
-              size={25}
+              size={20}
               color="black"
               className="hidden md:hidden lg:block transition-all duration-500 cursor-pointer hover:text-blue-500"
             />
