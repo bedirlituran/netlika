@@ -21,7 +21,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className=" file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl">
+      <div className=" file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
         <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3  font-custom  space-x-2 min-w-full lg:text-sm  opacity-95 " >
           <Link href="/">
             <Image
@@ -33,7 +33,7 @@ const Navbar = () => {
             />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:justify-center">
-            <ul className="flex items-center text-green-950 lg:text-xl lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
+            <ul className="flex items-center text-blue-950 lg:text-xl lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
               <li className="flex gap-2 items-center">
               <FaHome size={20} />
                 <Link
@@ -72,7 +72,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="flex  items-center gap-4 ">
+          <div className="flex  items-center gap-4 text-blue-950">
            
               <ThemeComp />
             
