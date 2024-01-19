@@ -6,7 +6,7 @@ import Card4 from "./cards/Card4";
 const Xidmet = () => {
   return (
     <>
-      <div className=" flex flex-col items-center justify-center m-auto bg-gray-50 min-h-[500px] shadow-2xl p-3 mt-6">
+      <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-50 min-h-auto  p-6 mt-6">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-2">
           Xidmətlər
         </h1>
@@ -14,7 +14,7 @@ const Xidmet = () => {
           Sayt üzərindən sifariş
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 mt-8 lg:mt-16
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 mt-8 lg:mt-16
         ">
           <Card2 />
           <Card3 />

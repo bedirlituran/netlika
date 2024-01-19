@@ -7,6 +7,7 @@ import AnimatedLayout from "../components/AnimatedLayout";
 import Slide from "../components/Slide";
 import Googleplay from "../components/Googleplay";
 import Reyting from "@/components/Reyting";
+import Emekdas from "@/components/Emekdas";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Xidmet />
       <Googleplay/>
       <Reklam />
+      <Emekdas/>
         <Reyting/>
       <WhatsAppButton />
         </main>
