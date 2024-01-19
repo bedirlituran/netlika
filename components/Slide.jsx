@@ -37,17 +37,11 @@ const Header = () => {
           <div className="flex items-center">
             <a
               href="/"
-              className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-white inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"
             >
-              Get started
+              Sifariş Et
             </a>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
-              Learn more
-            </a>
+           
           </div>
         </div>
       </div>

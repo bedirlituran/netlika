@@ -5,8 +5,7 @@ const Googleplay = () => {
     <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
 	<div className="container mx-auto flex flex-col justify-around p-4 text-center md:p-10 lg:flex-row">
 		<div className="flex flex-col justify-center lg:text-left">
-			<p className="mb-1 text-sm font-medium tracki uppercase dark:text-cyan-400">Hic eligendi necessitatibus quod quia</p>
-			<h1 className="py-2 text-3xl font-medium leadi title-font">Master Cleanse Reliac Heirloom</h1>
+			<h1 className="py-2 text-3xl font-medium leadi title-font">GammaNet tədbiqini yüklə</h1>
 		</div>
 		<div className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
 			<button className="inline-flex items-center px-6 py-3 rounded-lg dark:bg-cyan-400 dark:text-gray-900">

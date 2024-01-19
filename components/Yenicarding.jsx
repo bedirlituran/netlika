@@ -2,11 +2,7 @@ export const Pricing = () => {
     return (
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-          <div>
-            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-              Our Pricing
-            </p>
-          </div>
+          
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
             <span className="relative inline-block">
               <svg
@@ -31,13 +27,12 @@ export const Pricing = () => {
                   height="24"
                 />
               </svg>
-              <span className="relative">Transparent</span>
+              <span className="relative text-center">İnternet</span>
             </span>{' '}
-            pricing. Pay as you grow.
+            və TV paketləri.
           </h2>
-          <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+          <p className="text-center text-gray-700 md:text-lg">
+            Zövqünüzə uyğun paketləri bizdən sifariş edə bilərsiniz.
           </p>
         </div>
         <div className="grid max-w-md gap-10 row-gap-5 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-3 xl:max-w-screen-lg sm:mx-auto">
@@ -56,7 +51,7 @@ export const Pricing = () => {
             <div>
               <a
                 href="/"
-                className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-gray-800 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
+                className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-white inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide transition duration-200 bg-gray-800 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
               >
                 Start for free
               </a>
@@ -67,8 +62,8 @@ export const Pricing = () => {
           </div>
           <div className="relative flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow border-deep-purple-accent-400">
             <div className="absolute inset-x-0 top-0 flex justify-center -mt-3">
-              <div className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-white uppercase rounded bg-deep-purple-accent-400">
-                Most Popular
+              <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800  inline-block px-3 py-1 text-xs font-medium tracking-wider text-white uppercase rounded bg-deep-purple-accent-400">
+                Çox Seçilən
               </div>
             </div>
             <div className="text-center">
@@ -86,7 +81,7 @@ export const Pricing = () => {
             <div>
               <a
                 href="/"
-                className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               >
                 Buy Pro
               </a>
@@ -111,7 +106,7 @@ export const Pricing = () => {
             <div>
               <a
                 href="/"
-                className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-gray-800 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
+                className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-gray-800 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
               >
                 Buy Business
               </a>

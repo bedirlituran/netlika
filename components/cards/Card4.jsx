@@ -19,7 +19,7 @@ const Card4 = () => {
         />
       </div>
       <button
-        className="bg-sky-500 hover:bg-sky-700 hover:text-white p-3 w-36 h-16 rounded-2xl invisible  font-turan tracking-wider
+        className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-white hover:bg-sky-700 hover:text-white p-3 w-36 h-16 rounded-2xl invisible  font-turan tracking-wider
 text-lg  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold  z-10 group-hover:visible group-hover:text-white  transition-all duration-500 shadow-2xl">
         Sifariş Et
       </button>

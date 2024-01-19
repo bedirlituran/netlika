@@ -6,6 +6,7 @@ import Yenicarding from "../components/Yenicarding";
 import AnimatedLayout from "../components/AnimatedLayout";
 import Slide from "../components/Slide";
 import Googleplay from "../components/Googleplay";
+import Reyting from "@/components/Reyting";
 
 
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Xidmet />
       <Googleplay/>
       <Reklam />
+        <Reyting/>
       <WhatsAppButton />
         </main>
       
