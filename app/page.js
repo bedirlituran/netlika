@@ -5,6 +5,7 @@ import WhatsAppButton from "../components/Whatsapp";
 import Yenicarding from "../components/Yenicarding";
 import AnimatedLayout from "../components/AnimatedLayout";
 import Slide from "../components/Slide";
+import Googleplay from "../components/Googleplay";
 
 
 
@@ -19,6 +20,7 @@ export default function Home() {
           <Slide/>
         <Yenicarding />
       <Xidmet />
+      <Googleplay/>
       <Reklam />
       <WhatsAppButton />
         </main>
