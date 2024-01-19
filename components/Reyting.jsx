@@ -2,7 +2,7 @@ import React from 'react'
 
 const Reyting = () => {
   return (
-    <section className="p-6 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-white">
+    <section className="rounded-2xl p-6 bg-gradient-to-r from-gray-400 via-gray-900 to-blue-500 text-white mb-10">
 	<div className=" mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
 		<div className="flex flex-col justify-start m-2 lg:m-6">
 			<p className="text-4xl font-bold leadi lg:text-6xl">50+</p>
