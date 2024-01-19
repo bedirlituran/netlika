@@ -6,7 +6,7 @@ import Card4 from "./cards/Card4";
 const Xidmet = () => {
   return (
     <>
-      <div className="font-custom flex flex-col items-center justify-center m-auto bg-gray-50 min-h-[500px] shadow-2xl p-3 mt-6">
+      <div className=" flex flex-col items-center justify-center m-auto bg-gray-50 min-h-[500px] shadow-2xl p-3 mt-6">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-2">
           Xidmətlər
         </h1>
