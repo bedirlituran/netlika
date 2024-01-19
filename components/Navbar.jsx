@@ -20,8 +20,8 @@ const Navbar = () => {
     setisClick(!isClick)};
   return (
     <>
-      <div className="font-custom file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
-        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3  font-custom  space-x-2 min-w-full lg:text-sm  opacity-95 " >
+      <div className="font-sans file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
+        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3   space-x-2 min-w-full lg:text-sm  opacity-95 " >
           <Link href="/">
             <Image
               src="/image/logo.webp"
