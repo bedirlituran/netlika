@@ -9,6 +9,7 @@ import Googleplay from "../components/Googleplay";
 import Reyting from "../components/Reyting";
 import Emekdas from "../components/Emekdas";
 import Niyebiz from "../components/Niyebiz";
+import Divide from "../components/Divide";
 
 
 
@@ -21,13 +22,28 @@ export default function Home() {
       <AnimatedLayout>
         <main>
           <Slide/>
+          <Divide/>
         <Yenicarding />
+        <Divide/>
+
       <Xidmet />
+      <Divide/>
+
       <Niyebiz />
+      <Divide/>
+
       <Googleplay/>
+      <Divide/>
+
       <Reklam />
+      <Divide/>
+
       <Emekdas/>
+      <Divide/>
+
         <Reyting/>
+        <Divide/>
+
       <WhatsAppButton />
         </main>
       

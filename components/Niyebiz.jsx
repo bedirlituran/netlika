@@ -1,8 +1,15 @@
 "use client"
+import React from "react";
+import {GrUserWorker} from "react-icons/gr"
+import { BsSpeedometer } from "react-icons/bs";
+import { PiTelevisionBold } from "react-icons/pi";
+import { Ri24HoursLine } from "react-icons/ri";
+
+
 const Feature = () => {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+    <div className="flex flex-col items-center text-center justify-center px-4 py-16 mx-auto sm:max-w-full md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="max-w-full mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
           <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
             Gamma net
@@ -41,26 +48,14 @@ const Feature = () => {
       </div>
       <div className="grid gap-8 row-gap-10 lg:grid-cols-2">
         <div className="max-w-md sm:mx-auto sm:text-center">
-          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-            <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-              stroke="currentColor"
-              viewBox="0 0 52 52"
-            >
-              <polygon
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                points="29 13 14 29 25 29 23 39 38 23 27 23"
-              />
-            </svg>
+          
+        <div className="flex justify-center items-center mb-4">
+        <GrUserWorker size={40} color="red"/>
+ 
           </div>
-          <h6 className="mb-3 text-xl font-bold leading-5">The deep ocean</h6>
+          <h6 className="mb-3 text-xl font-bold leading-5">Təcrübəli işçi kollektivi</h6>
           <p className="mb-3 text-sm text-gray-900">
-            A flower in my garden, a mystery in my panties. Heart attack never
-            stopped old Big Bear. I didn't even know we were calling him Big
-            Bear. We never had the chance to.
+          Mütəxəssislərimiz quraşdırılmanı qısa müddətə yerinə yetirəcək və istənilən problemi həll etməyə kömək edəcək.
           </p>
           <a
             href="/"
@@ -71,27 +66,14 @@ const Feature = () => {
           </a>
         </div>
         <div className="max-w-md sm:mx-auto sm:text-center">
-          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-            <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-              stroke="currentColor"
-              viewBox="0 0 52 52"
-            >
-              <polygon
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                points="29 13 14 29 25 29 23 39 38 23 27 23"
-              />
-            </svg>
+        <div className="flex justify-center items-center mb-4">
+        <BsSpeedometer size={40} color="red"/>
+ 
           </div>
-          <h6 className="mb-3 text-xl font-bold leading-5">When has justice</h6>
+          <h6 className="mb-3 text-xl font-bold leading-5">Sürətli Bağlantı</h6>
           <p className="mb-3 text-sm text-gray-900">
-            Rough pomfret lemon shark plownose chimaera southern sandfish
-            kokanee northern sea robin Antarctic cod. Yellow-and-black triplefin
-            gulper South American Lungfish mahi-mahi, butterflyfish glass
-            catfish soapfish ling gray mullet!
+          Saat, ərazi, hava şəraitindən asılı olmayaraq yüksək sürət və kəsintisiz qoşulma
+
           </p>
           <a
             href="/"
@@ -102,27 +84,14 @@ const Feature = () => {
           </a>
         </div>
         <div className="max-w-md sm:mx-auto sm:text-center">
-          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-            <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-              stroke="currentColor"
-              viewBox="0 0 52 52"
-            >
-              <polygon
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                points="29 13 14 29 25 29 23 39 38 23 27 23"
-              />
-            </svg>
+        <div className="flex justify-center items-center mb-4">
+        <PiTelevisionBold size={40} color="red"/>
+ 
           </div>
-          <h6 className="mb-3 text-xl font-bold leading-5">Organically grow</h6>
+          <h6 className="mb-3 text-xl font-bold leading-5">Ən reytinqli kanallar
+</h6>
           <p className="mb-3 text-sm text-gray-900">
-            A slice of heaven. O for awesome, this chocka full cuzzie is as
-            rip-off as a cracker. Meanwhile, in behind the bicycle shed,
-            Hercules Morse, as big as a horse and Mrs Falani were up to no good
-            with a bunch of crook pikelets.
+          HD keyfiyyətində ən reytinqli yerli və xarici televiziya kanallarını izləyin.
           </p>
           <a
             href="/"
@@ -133,29 +102,17 @@ const Feature = () => {
           </a>
         </div>
         <div className="max-w-md sm:mx-auto sm:text-center">
-          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
-            <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
-              stroke="currentColor"
-              viewBox="0 0 52 52"
-            >
-              <polygon
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                points="29 13 14 29 25 29 23 39 38 23 27 23"
-              />
-            </svg>
+        <div className="flex justify-center items-center mb-4">
+        <Ri24HoursLine size={40} color="red"/>
+ 
           </div>
           <h6 className="mb-3 text-xl font-bold leading-5">
-            A slice of heaven
+          24/7 Dəstək
+
           </h6>
           <p className="mb-3 text-sm text-gray-900">
-            Disrupt inspire and think tank, social entrepreneur but preliminary
-            thinking think tank compelling. Inspiring, invest synergy capacity
-            building, white paper; silo, unprecedented challenge B-corp
-            problem-solvers.
+          İstənilən vaxt bizə zəng edin. Texniki dəstək 24/7 aktivdir.
+
           </p>
           <a
             href="/"

@@ -21,18 +21,18 @@ const Navbar = () => {
   return (
     <>
       <div className="font-sans file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
-        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3   space-x-2 min-w-full lg:text-sm  opacity-95 " >
+        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3 min-w-full" >
           <Link href="/">
             <Image
               src="/image/logo.webp"
-              width={100}
-              height={100}
+              width={90}
+              height={90}
               alt="alt"
               className="cursor-pointer  hover:scale-110 bg-transparent rounded-md transition-all duration-500 "
             />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:justify-center">
-            <ul className="flex items-center text-blue-950 lg:text-xl lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
+            <ul className="flex items-center text-blue-950 text lg:text-sm lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
               <li className="flex gap-2 items-center">
               <FaHome size={20} />
                 <Link
