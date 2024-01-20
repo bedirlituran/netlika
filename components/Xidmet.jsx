@@ -1,9 +1,32 @@
+"use client";
+import { useState,useEffect } from "react";
 import Card2 from "./cards/Card2";
 import React from "react";
 import Card3 from "./cards/Card3";
 import Card4 from "./cards/Card4";
 
 const Xidmet = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % 3);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + 3) % 3);
+  };
+
+  useEffect(() => {
+    // Otomatik kaydırma için setInterval kullanımı
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 2000); // Her 3 saniyede bir kaydırma (ayarlayabilirsiniz)
+
+    return () => {
+      // Component kaldırıldığında setInterval'i temizle
+      clearInterval(intervalId);
+    };
+  }, [currentIndex]);
   return (
     <>
       <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-100 min-h-auto  p-2">
@@ -14,12 +37,19 @@ const Xidmet = () => {
           Sayt üzərindən sifariş
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 mt-8 lg:mt-16
-        ">
-          <Card2 />
-          <Card3 />
-          <Card4 />
-        </div>
+        <div className="slider-container transition-all duration-500">
+      <div className="grid grid-cols-1 sm:grid-cols-1  gap-6 mt-8 lg:mt-16">
+        {currentIndex === 0 && <Card2 />}
+        {currentIndex === 1 && <Card3 />}
+        {currentIndex === 2 && <Card4 />}
+      </div>
+      <div className="flex justify-center items-center gap-4 font-bold text-2xl">
+
+      <button onClick={prevSlide}>{"<"}</button>
+      <button onClick={nextSlide}>{">"}</button>
+      </div>
+      
+    </div>
       </div>
     </>
   );
