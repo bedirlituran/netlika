@@ -2,10 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['mdbcdn.b-cdn.net'],
+    domains: ['mdbcdn.b-cdn.net', 'your-remote-domain.com'],
   },
-}
+};
 
-module.exports = nextConfig
-
+module.exports = nextConfig;
 

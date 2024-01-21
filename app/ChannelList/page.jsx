@@ -1,6 +1,7 @@
 // components/ChannelList.js
+"use client";
 import React from 'react';
-
+import {motion} from 'framer-motion'
 
 const channels = [
   { id: 1, name: 'Aztv' },
@@ -171,19 +172,14 @@ const channels = [
   { id: 166, name: 'Animal Planet HD	' },
   { id: 167, name: 'Ictimai HD	' },
   { id: 168, name: 'Beyaz Tv HD' },
-
- 
-  
-
-
-
-
-  // Diğer kanalları buraya ekleyebilirsiniz
 ];
+
 
 const ChannelList = () => {
   return (
-    <div className="font-custom container mx-auto mt-8 mb-8 ">
+    <motion.div className="font-custom container mx-auto mt-8 mb-8 "  initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}>
       <h1 className="text-2xl font-bold mb-4">TV Kanal Siyahısı</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {channels.map((channel) => (
@@ -195,7 +191,7 @@ const ChannelList = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

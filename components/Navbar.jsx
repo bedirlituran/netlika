@@ -3,8 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BiPhoneCall } from "react-icons/bi";
-import { CiMail } from "react-icons/ci";
 import { useState } from "react";
 import { FaHome } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
@@ -16,7 +14,8 @@ import { RiPresentationFill } from "react-icons/ri";
 const Navbar = () => {
   const [isClick, setisClick] = useState(false);
   const toggleNavbar = () => {
-    setisClick(!isClick)};
+    setisClick(!isClick)
+  };
   return (
     <>
       <div className="font-sans file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
@@ -33,7 +32,7 @@ const Navbar = () => {
           <div className="hidden lg:flex lg:items-center lg:justify-center">
             <ul className="flex items-center text-blue-950 text lg:text-sm lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
               <li className="flex gap-2 items-center">
-              <FaHome size={20} />
+                <FaHome size={20} />
                 <Link
                   href="/"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
@@ -41,7 +40,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="flex items-center gap-2">
-              <BsPersonCircle size={20}/>
+                <BsPersonCircle size={20} />
 
                 <Link
                   href="/haqqında"
@@ -50,7 +49,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="flex gap-2 items-center">
-              <FaHandsHelping size={20} />
+                <FaHandsHelping size={20} />
 
                 <Link
                   href="/xidmətlər"
@@ -59,7 +58,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="flex gap-2 items-center">
-              <RiPresentationFill size={20} />
+                <RiPresentationFill size={20} />
 
                 <Link
                   href="/layihələr"
@@ -70,30 +69,11 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="flex  items-center gap-4 text-blue-950">
-           
+          <div className="flex  items-center  text-blue-950">
+                <Link href="https://fpay.az/guest/payments/new-payment/category/4950/merchant/6034" target="blank" className="bg-gradient-to-r from-red-700 via-red-900 to-red-400 p-1 rounded-2xl text-white">Online Ödə</Link>
             
-            
-
-            <BiPhoneCall
-              size={20}
-              color="black"
-              className="hidden lg:block transition-all duration-500 cursor-pointer hover:text-blue-500"
-            />
-
-<a href="tel:+994126104888" className="text-black hover:text-ble-500 cursor-pointer hidden lg:block transition-all duration-500">
-  (012) 610 48 88
-</a>
-            <CiMail
-              size={20}
-              color="black"
-              className="hidden md:hidden lg:block transition-all duration-500 cursor-pointer hover:text-blue-500"
-            />
-           <a href="mailto:gamma_net@mail.ru" className="text-black hover:text-blue-500 hidden lg:block transition-all duration-500 cursor-pointer md:hidden">
-  gamma_net@mail.ru
-</a>
           </div>
-          <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center ">
             <button
               className="inline-flex items-center justify-center p-2 rounded-md text-white  hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus-within:ring-white transition-all duration-500"
               onClick={toggleNavbar}>

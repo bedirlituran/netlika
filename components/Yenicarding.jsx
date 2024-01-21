@@ -1,3 +1,6 @@
+import React from 'react';
+import Link from 'next/link';
+
 export const Pricing = () => {
     return (
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -43,7 +46,7 @@ export const Pricing = () => {
                 <div className="mr-1 text-5xl font-bold">TV</div>
               </div>
               <div className="mt-2 space-y-3">
-                <div className="text-gray-700">150 + baxımlı kanal</div>
+                <Link href='/channelList' className="text-gray-700 cursor-poinet  hover:underline hover:text-blue-400 transition-all duration-500">150 + baxımlı kanal</Link>
                 <div className="text-gray-700">30 + HD of kanal</div>
                 <div className="text-gray-700">100 + xarici kanal</div>
               </div>

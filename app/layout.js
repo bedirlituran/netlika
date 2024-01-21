@@ -1,14 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '../components/Navbar'
-import Providers from './provider'
 import Footer from '../components/Footer'
-import AnimatedLayout from "../components/AnimatedLayout";
-import Xerite from '@/components/Xerite'
-
-
-
-
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,14 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
     
       <body className={`${inter} oveflow-x-hidden`}>
-      <AnimatedLayout>
-        <Providers>
+      
         <Navbar/>
           {children}
-          <Xerite/>
-          <Footer/>
-        </Providers>
-        </AnimatedLayout>
+          <Footer/>        
         </body>
     </html>
   )
