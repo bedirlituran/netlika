@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Button from "./buttons/button";
 import Link from "next/link";
 const Reklam = () => {
   return (
@@ -13,7 +12,7 @@ const Reklam = () => {
             height={600}
             quality={75}
             alt="alt"
-            className="object-cover w-[400px] h-[400px] lg:w-[550px] lg:h-[550px] "
+            className="object-cover w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] "
           />
         </div>
         <div className="lg:flex  basis-1/2 justify-center items-center m-auto flex-col space-y-8 text-center">

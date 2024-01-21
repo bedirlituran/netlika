@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="font-sans file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300 shadow-xl text-blue-950">
+      <div className="font-sans file:flex items-center justify-between px-2 bg-white transition-colors duration-500  w-full h-20 sticky top-0 z-50 border-b border-gray-300  text-blue-950">
         <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3 min-w-full">
           <Link href="/">
             <Image
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <FaHandsHelping size={20} />
 
                 <Link
-                  href="/xidmətlər"
+                  href="/xidmetler"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                   Xidmətlər
                 </Link>
@@ -141,12 +141,12 @@ const Navbar = () => {
         </nav>
         {isClick && (
           <motion.div
-            className="absolute lg:hidden z-50 top-18 left-0 right-0  h-screen p-4  w-full bg-gray-100  translate-x-0 transition-translate duration-1000"
+            className="absolute lg:hidden z-50 top-18 left-0 right-0  h-auto p-4  w-full bg-gray-100  translate-x-0 transition-translate duration-1000"
             initial={{ opacity: 0, transform: "translateX(100%)" }}
             animate={{ opacity: 1, transform: "translateX(0%)" }}
             transition={{ duration: 0.5 }}>
             <div className=" px-2 pt-2 pb-3 space-y-3 sm:px-3 top-18  ">
-              <ul className="space-y-6  flex flex-col items-center text-center justify-center border p-4">
+              <ul className="space-y-6 font-bold  flex flex-col items-center text-center justify-center border p-4">
                 <li>
                   <Link
                     href="/"
@@ -156,20 +156,20 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    href="/haqqında"
+                    href="/haqqimizda"
                     className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
-                    Haqqında
+                    Haqqımızda
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/xidmətlər"
+                    href="/xidmetler"
                     className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
                     Xidmətlər
                   </Link>
                 </li>
               </ul>
-              <ul className="flex items-center justify-between border p-4">
+              <ul className="flex flex-col items-center font-bold justify-center border p-4 gap-4">
                 <li className="flex flex-row items-center bg-transparent">
                   <label className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                     Ealqe:
