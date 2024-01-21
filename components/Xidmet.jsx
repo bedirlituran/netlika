@@ -4,6 +4,9 @@ import Card2 from "./cards/Card2";
 import React from "react";
 import Card3 from "./cards/Card3";
 import Card4 from "./cards/Card4";
+import { FaChevronRight } from "react-icons/fa6";
+import { FaChevronLeft } from "react-icons/fa6";
+
 
 const Xidmet = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,10 +46,10 @@ const Xidmet = () => {
         {currentIndex === 1 && <Card3 />}
         {currentIndex === 2 && <Card4 />}
       </div>
-      <div className="flex justify-center items-center gap-4 font-bold text-2xl">
+      <div className="flex justify-center items-center gap-8 mt-3 font-bold text-3xl">
 
-      <button onClick={prevSlide}>{"<"}</button>
-      <button onClick={nextSlide}>{">"}</button>
+      <FaChevronLeft onClick={prevSlide} className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
+      <FaChevronRight onClick={nextSlide}className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
       </div>
       
     </div>
