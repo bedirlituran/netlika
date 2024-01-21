@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiPhoneCall } from "react-icons/bi";
 import { CiMail } from "react-icons/ci";
-import ThemeComp from "./ThemeComp";
 import { useState } from "react";
 import { FaHome } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
@@ -73,7 +72,7 @@ const Navbar = () => {
 
           <div className="flex  items-center gap-4 text-blue-950">
            
-              <ThemeComp />
+            
             
 
             <BiPhoneCall
