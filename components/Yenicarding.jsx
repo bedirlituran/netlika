@@ -114,7 +114,7 @@ export const Pricing = () => {
                 İndi Qoşul
               </a>
               <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
-                Sed ut unde omnis iste natus accusantium doloremque.
+               Ip tv ile keyfiyyətli yayımı yaşa və həzz al.
               </p>
             </div>
           </div>
