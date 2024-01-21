@@ -3,6 +3,8 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Providers from './provider'
 import Footer from '../components/Footer'
+import AnimatedLayout from "../components/AnimatedLayout";
+import Xerite from '@/components/Xerite'
 
 
 
@@ -19,14 +21,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     
-      <body className={`${inter} bg-red-50`}>
-      
+      <body className={`${inter} oveflow-x-hidden`}>
+      <AnimatedLayout>
         <Providers>
         <Navbar/>
           {children}
+          <Xerite/>
           <Footer/>
         </Providers>
-      
+        </AnimatedLayout>
         </body>
     </html>
   )

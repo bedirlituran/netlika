@@ -20,7 +20,7 @@ const Xidmet = () => {
     // Otomatik kaydırma için setInterval kullanımı
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 2000); // Her 3 saniyede bir kaydırma (ayarlayabilirsiniz)
+    }, 3000); // Her 3 saniyede bir kaydırma (ayarlayabilirsiniz)
 
     return () => {
       // Component kaldırıldığında setInterval'i temizle
