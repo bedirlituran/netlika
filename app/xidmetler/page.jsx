@@ -1,11 +1,11 @@
 import React from 'react'
 import Xidmet from '../../components/Xidmet'
-import YeniCaring from '../../components/YeniCarding'
+import Yenicarding from '../../components/Yenicarding'
 const page = () => {
   return (
     <div>
       <Xidmet />
-      <YeniCarding />
+      <Yenicarding />
     </div>
   )
 }

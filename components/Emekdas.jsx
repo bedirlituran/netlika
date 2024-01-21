@@ -11,7 +11,7 @@ export default () => {
                   </p>
               </div>
               <div className="mt-12 flex justify-center">
-                  <ul className="inline-grid grid-cols-2 gap-x-10 gap-y-6 md:gap-x-16 md:grid-cols-3 lg:grid-cols-4">
+                  <ul className="inline-grid grid-cols-1 gap-x-10 gap-y-6 md:gap-x-16 md:grid-cols-3 lg:grid-cols-4">
 
                       {/* LOGO 1 */}
                     <li>
