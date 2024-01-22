@@ -36,7 +36,7 @@ const Header = () => {
           </p>
           <div className="flex items-center  justify-center">
             <a
-              href="/"
+              href="/Muraciet"
               className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-white inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"
             >
               Sifariş Et
