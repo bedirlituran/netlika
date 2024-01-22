@@ -27,7 +27,7 @@ export default function Example() {
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Əlaqə</h2>
         <p className="mt-2 text-xl leading-8 text-gray-600">
-          Qoşulmaq üçün aşağıdakı formu doldurun və bizimlə əlaqə saxlayın.
+          Qoşulmaq üçün aşağıdakı formu doldurun və yaxud <strong>Whatsapp</strong> butonuna tıklayaraq həmçinin yuxarıdakı <strong>Əlaqə</strong> bölməsindən bizimlə əlaqə saxlayın.
         </p>
       </div>
       <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">

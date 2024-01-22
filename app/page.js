@@ -1,7 +1,6 @@
 
 import Xidmet from "../components/Xidmet";
 import Reklam from "../components/Reklam";
-import WhatsAppButton from "../components/Whatsapp";
 import Yenicarding from "../components/Yenicarding";
 import Googleplay from "../components/Googleplay";
 import Reyting from "../components/Reyting";
@@ -32,7 +31,7 @@ export default function Home() {
       <Divide />
       <Reyting />
       <Divide />
-      <WhatsAppButton />
+      
     </main>
   );
 }
