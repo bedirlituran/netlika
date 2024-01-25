@@ -52,12 +52,7 @@ export const Pricing = () => {
               </div>
             </div>
             <div>
-              <a
-                href="/Muraciet"
-                className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-white inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide transition duration-200 bg-gray-800 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
-              >
-                Pulsuz Qoşul
-              </a>
+             
               <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
                 Keyfiyyətli və Zövqlü yayımı GammaNet ilə yaşa.
               </p>
@@ -82,12 +77,7 @@ export const Pricing = () => {
               </div>
             </div>
             <div>
-              <a
-                href="/Muraciet"
-                className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >
-                Pro Qoşul
-              </a>
+          
               <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
                 İnternet istifadəsindən heç zaman belə zövq almamısınınız.
               </p>
@@ -107,12 +97,7 @@ export const Pricing = () => {
               </div>
             </div>
             <div>
-              <a
-                href="/Muraciet"
-                className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-gray-800 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
-              >
-                İndi Qoşul
-              </a>
+             
               <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
                Ip tv ile keyfiyyətli yayımı yaşa və həzz al.
               </p>
