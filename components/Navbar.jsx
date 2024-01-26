@@ -137,10 +137,10 @@ const Navbar = () => {
               {isClick ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 transition-all duration-500 "
+                  className="h-10 w-10 transition-all duration-500  "
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="green">
+                  stroke="red">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -154,12 +154,13 @@ const Navbar = () => {
                   className="h-10 w-10 transition-all duration-500"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="green">
+                  stroke="red">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M4 6h16M4 12h16M4 18h16"
+               
                   />
                 </svg>
               )}
@@ -173,7 +174,7 @@ const Navbar = () => {
             animate={{ opacity: 1, transform: "translateX(0%)" }}
             transition={{ duration: 0.5 }}>
             <div className=" px-2 pt-2 pb-3 space-y-3 sm:px-3 top-18  ">
-              <ul className="space-y-6 font-bold  flex flex-col items-center text-center justify-center border p-4">
+              <ul className="space-y-6 font-bold  flex flex-col items-center text-start justify-center border border-red-200 rounded-2xl p-4">
                 <li className="flex gap-2">
                   <FaHome size={20} />
                   <Link
@@ -198,8 +199,29 @@ const Navbar = () => {
                     Xidmətlər
                   </Link>
                 </li>
+                <li className="flex gap-2">
+              <PiTelevisionFill size={20} />
+
+                <Link
+                  href="/channelList"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Kanal Listi
+                </Link>
+
+              </li>
+              <li className="flex gap-2 ">
+              <SiPicartodottv size={20} />
+
+
+                <Link
+                  href="/channelList"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                 IP tv
+                </Link>
+
+              </li>
               </ul>
-              <ul className="flex flex-col items-center font-bold justify-center border p-4 gap-4">
+              <ul className="space-y-6 font-bold  flex flex-col items-center text-start justify-center border p-4  border-red-200 rounded-2xl">
                 <li className="flex flex-row gap-2 items-center bg-transparent">
                 <HiPhone size={20} />
                 <Link
@@ -212,7 +234,7 @@ const Navbar = () => {
                 <Link
               href="https://fpay.az/guest/payments/new-payment/category/4950/merchant/6034"
               target="blank"
-              className="p-2 rounded-2xl text-black border border-black hover:bg-yellow-500 transition-all duration-500" >
+              className="p-2  text-black   hover:bg-yellow-500 transition-all duration-500 border border-red-200 rounded-2xl" >
               Online Ödə
             </Link>
                 </li>
