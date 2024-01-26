@@ -11,7 +11,7 @@ function Sosial() {
           rel="noopener noreferrer"
           className="hover:text-blue-500"
         >
-          <FaTwitter size={24} />
+          <FaTwitter size={24} style={{ 'color': '#ffff00' }} />
         </a>
         <a
           href="#"
@@ -19,7 +19,7 @@ function Sosial() {
           rel="noopener noreferrer"
           className="hover:text-red-500"
         >
-          <FaInstagram size={24} />
+          <FaInstagram size={24} style={{ 'color': '#ffff00' }}/>
         </a>
         <a
           href="#"
@@ -27,7 +27,7 @@ function Sosial() {
           rel="noopener noreferrer"
           className="hover:text-blue-800"
         >
-          <FaLinkedin size={24} />
+          <FaLinkedin size={24} style={{ 'color': '#ffff00' }}/>
         </a>
         <a
           href="#"
@@ -35,7 +35,7 @@ function Sosial() {
           rel="noopener noreferrer"
           className="hover:text-gray-600"
         >
-          <FaGithub size={24} />
+          <FaGithub size={24} style={{ 'color': '#ffff00' }}/>
         </a>
       </div>
     </footer>

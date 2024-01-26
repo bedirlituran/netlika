@@ -3,7 +3,7 @@ import Xidmet from '../../components/Xidmet'
 import Yenicarding from '../../components/Yenicarding'
 const page = () => {
   return (
-    <div  style={{'background':'yellow'}}>
+    <div>
       <Xidmet />
       <Yenicarding />
     </div>

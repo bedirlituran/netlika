@@ -8,6 +8,10 @@ import { BsPersonCircle } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
 import { HiPhone } from "react-icons/hi2";
 import { motion } from "framer-motion";
+import { PiTelevisionFill } from "react-icons/pi";
+import { SiPicartodottv } from "react-icons/si";
+
+
 
 const Navbar = () => {
   const [isClick, setisClick] = useState(false);
@@ -75,6 +79,35 @@ const Navbar = () => {
                 </Link>
 
               </li>
+
+              <li className="flex gap-2 items-center">
+              <PiTelevisionFill size={20} />
+
+                <Link
+                  href="/channelList"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Kanal Listi
+                </Link>
+
+              </li>
+
+
+              <li className="flex gap-2 items-center">
+              <SiPicartodottv size={20} />
+
+
+                <Link
+                  href="/channelList"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                 IP tv
+                </Link>
+
+              </li>
+
+
+
+
+
 
               <li className="flex gap-2 items-center">
                 <HiPhone size={20} />

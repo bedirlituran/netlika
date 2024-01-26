@@ -32,11 +32,11 @@ const Xidmet = () => {
   }, [currentIndex]);
   return (
     <>
-      <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-100 min-h-auto  p-2">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-2">
+      <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-100 min-h-auto  p-3">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-1 mt-10">
           Xidmətlər
         </h1>
-        <p className="font-turan font-light text-2xl sm:text-3xl md:text-3xl my-2 lg:my-5">
+        <p className=" font-light text-2xl sm:text-3xl md:text-3xl  lg:my-5">
           Sayt üzərindən sifariş
         </p>
 
@@ -49,7 +49,7 @@ const Xidmet = () => {
       <div className="flex justify-center items-center gap-8 mt-3 font-bold text-3xl">
 
       <FaChevronLeft onClick={prevSlide} className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
-      <FaChevronRight onClick={nextSlide}className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
+      <FaChevronRight onClick={nextSlide} className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
       </div>
       
     </div>
