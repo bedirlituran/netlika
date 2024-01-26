@@ -35,13 +35,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="font-sans file:flex items-center justify-between px-2 transition-colors duration-500  w-full h-20 sticky top-0 z-50  border-gray-300  text-blue-950" style={{ 'background': 'yellow' }}>
+      <div className="font-sans file:flex items-center justify-between px-2 transition-colors duration-500  w-full h-20 sticky top-0 z-50  border-gray-300  text-blue-950" style={{ 'background': '#ffff00' }}>
         <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3 min-w-full">
           <Link href="/">
             <Image
               src="/image/logo.webp"
-              width={90}
-              height={90}
+              width={100}
+              height={100}
               alt="alt"
               className="cursor-pointer  hover:scale-110 bg-transparent rounded-md transition-all duration-500 "
             />
