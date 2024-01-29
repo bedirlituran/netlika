@@ -11,7 +11,7 @@ export const Pricing = () => {
               <svg
                 viewBox="0 0 52 24"
                 fill="currentColor"
-                className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"style={{'color':'yellow'}}
+                className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"style={{'color':'black'}}
               >
                 <defs>
                   <pattern
@@ -52,7 +52,7 @@ export const Pricing = () => {
               </div>
               <div className='mt-2 space-y-3 ml-4'><a
               href="/Muraciet"
-              className=" marker:bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-black inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"style={{ 'background': '#ffff00' }}
+              className="  text-white inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"style={{ 'background': 'red' }}
             >
               Sifariş Et
             </a></div>
@@ -66,7 +66,7 @@ export const Pricing = () => {
           </div>
           <div className="relative flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow border-deep-purple-accent-400">
             <div className="absolute inset-x-0 top-0 flex justify-center -mt-3">
-              <div className="  inline-block px-3 py-1 text-xs font-medium tracking-wider text-black uppercase rounded bg-deep-purple-accent-400"style={{'background':'yellow'}}>
+              <div className="  inline-block px-3 py-1 text-xs font-medium tracking-wider text-white uppercase rounded bg-deep-purple-accent-400"style={{'background':'black'}}>
                 Çox Seçilən
               </div>
             </div>
@@ -83,7 +83,7 @@ export const Pricing = () => {
               </div>
               <div className='mt-2 space-y-3 ml-4'><a
               href="/Muraciet"
-              className=" marker:bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-black inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"style={{ 'background': '#ffff00' }}
+              className="  text-white inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"style={{ 'background': 'red' }}
             >
               Sifariş Et
             </a></div>
@@ -110,7 +110,7 @@ export const Pricing = () => {
               </div>
               <div className='mt-2 space-y-3 ml-4'><a
               href="/Muraciet"
-              className=" marker:bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 text-black inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"style={{ 'background': '#ffff00' }}
+              className="  text-white inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md  focus:shadow-outline focus:outline-none"style={{ 'background': 'red' }}
             >
               Sifariş Et
             </a></div>

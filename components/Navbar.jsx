@@ -112,7 +112,7 @@ const Navbar = () => {
               <li className="flex gap-2 items-center">
                 <HiPhone size={20} />
                 <Link
-                  href='/Muraciet' className="text-black hover:text-blue-500  hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  href='/elaqe2' className="text-black hover:text-blue-500  hover:border-b border-blue-500 tracking-wider transition-all duration-500">
 
                   Əlaqə
                 </Link>
@@ -225,7 +225,7 @@ const Navbar = () => {
                 <li className="flex flex-row gap-2 items-center bg-transparent">
                 <HiPhone size={20} />
                 <Link
-                  href='/Muraciet' className="text-black hover:text-blue-500 border-blue-500 tracking-wider transition-all duration-500">
+                  href='/elaqe2' className="text-black hover:text-blue-500 border-blue-500 tracking-wider transition-all duration-500">
 
                   Əlaqə
                 </Link>
