@@ -11,7 +11,7 @@ const HomePage = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col gap-4 justify-center items-center md:flex-row md:gap-6 md:justify-around">
+        <div className="flex flex-col gap-4 justify-center items-center text-center md:flex-row md:gap-6 md:justify-around">
           <div className="mb-8 md:mb-0">
             <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
