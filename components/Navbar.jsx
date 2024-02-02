@@ -97,7 +97,7 @@ const Navbar = () => {
 
 
                 <Link
-                  href="/channelList"
+                  href="/tmsplayer"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                  IP tv
                 </Link>
@@ -213,8 +213,8 @@ const Navbar = () => {
               <SiPicartodottv size={20} />
 
 
-                <Link
-                  href="/channelList"
+            <Link
+                  href="/tmsplayer"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                  IP tv
                 </Link>
