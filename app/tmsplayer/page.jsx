@@ -6,12 +6,12 @@ const HomePage = () => {
   const handleDownloadClick = () => {
     // TMS programını başlatan kod buraya gelecek
     // Örneğin, bir link aracılığıyla kullanıcıyı TMS programının indirme sayfasına yönlendirebilirsiniz
-    window.location.href = 'https://tr.aptoide.com/download?app_id=66861512&store_name=aptoide-web&entry_point=appstore_appview_header_desktop_v10';
+    window.location.href = 'https://www.9apps.com/downloading/android-softs/ru-tvip-atv/';
   };
 
   return (
-    <div>
-      <h1>Next.js Project</h1>
+    <div className='flex justify-center items-center p-20'>
+      
       <button onClick={handleDownloadClick}>TMS'i İndir</button>
     </div>
   );
