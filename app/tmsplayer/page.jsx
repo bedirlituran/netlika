@@ -10,14 +10,15 @@ const HomePage = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'https://www.9apps.com/downloading/android-softs/ru-tvip-tv/';
+    window.location.href = '';
   }
 
   return (
-    <div className='flex justify-center items-center p-20'>
+    <div className='flex flex-col h-screen gap-6 justify-center items-center'>
+      <h1 className='text-3xl font-bold'>Player Endirme Linkləri</h1>
       
-      <button onClick={handleDownloadClick}>TMS'i İndir</button>
-      <button onClick={handlePhoneClick}>telefon ucun</button>
+      <button className='bg-red-500 p-2 rounded-2xl text-white '><a href="https://www.9apps.com/downloading/android-softs/ru-tvip-atv/">Tv üçün yüklə</a></button>
+      <button className='bg-red-500 p-2 rounded-2xl text-white '><a href="https://www.9apps.com/downloading/android-softs/ru-tvip-tv/">Telefon üçün yüklə</a></button>
     </div>
   );
 };
