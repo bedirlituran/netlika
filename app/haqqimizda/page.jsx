@@ -1,10 +1,15 @@
 // GammaNetPage.js
-
+"use client";
 import React from 'react';
+import { NextSeo } from 'next-seo';
+
 
 const GammaNetPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center py-10 " >
+      
+      <NextSeo title="GammaNet Şirkəti" description='Gammanet ile Ən yüksək səviyyəli xidmətlər'/>
+
       <div className="max-w-2xl p-8 bg-white shadow-md rounded-md py-10" >
         <h1 className="text-4xl font-bold mb-4">GammaNet Şirkəti</h1>
         <p className="text-lg mb-6">

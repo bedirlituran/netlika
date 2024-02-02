@@ -1,16 +1,13 @@
 // pages/reqemsal-tv.js
-
+"use client";
 import React from "react";
-import Head from "next/head";
+import { NextSeo } from 'next-seo';
 
 const ReqemsalTV = () => {
   return (
     <div className="container font-custom mx-auto p-8 mt-3 space-y-7">
-      <Head>
-        <title>Reqemsal TV</title>
-        <meta name="description" content="Azerbaycan'da reqemsal TV hakkında bilgi." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <NextSeo title="Gammanet Reqemsal TV" description="Azerbaycan'da reqemsal TV hakkında bilgi." />
+     
 
       <h1 className="text-3xl  font-bold mb-4 lg:text-5xl">GammaNet Rəqəmsal TV</h1>
         

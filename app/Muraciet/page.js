@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
+import { NextSeo } from 'next-seo';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -12,6 +13,7 @@ export default function Example() {
 
   return (
     <div className=" isolate bg-gray-200 px-6 py-24 sm:py-32 lg:px-8" >
+      <NextSeo title="Gammanet tv Muraciet" description="Gammanet tv Əlaqə" />
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"

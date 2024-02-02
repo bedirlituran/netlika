@@ -1,11 +1,10 @@
 "use client";
-import { useState,useEffect } from "react";
+import { useState} from "react";
 import Card2 from "./cards/Card2";
 import React from "react";
 import Card3 from "./cards/Card3";
 import Card4 from "./cards/Card4";
-import { FaChevronRight } from "react-icons/fa6";
-import { FaChevronLeft } from "react-icons/fa6";
+import { TiArrowLeftOutline, TiArrowRightOutline } from "react-icons/ti";
 
 
 const Xidmet = () => {
@@ -19,17 +18,6 @@ const Xidmet = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + 3) % 3);
   };
 
-  useEffect(() => {
-    // Otomatik kaydırma için setInterval kullanımı
-    const intervalId = setInterval(() => {
-      nextSlide();
-    }, 3000); // Her 3 saniyede bir kaydırma (ayarlayabilirsiniz)
-
-    return () => {
-      // Component kaldırıldığında setInterval'i temizle
-      clearInterval(intervalId);
-    };
-  }, [currentIndex]);
   return (
     <>
       <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-100 min-h-auto  p-3">
@@ -46,10 +34,10 @@ const Xidmet = () => {
         {currentIndex === 1 && <Card3 />}
         {currentIndex === 2 && <Card4 />}
       </div>
-      <div className="flex justify-center items-center gap-8 mt-3 font-bold text-3xl">
+      <div className="flex justify-center items-center gap-14 mt-3 font-bold text-3xl">
 
-      <FaChevronLeft onClick={prevSlide} className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
-      <FaChevronRight onClick={nextSlide} className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
+      <TiArrowLeftOutline  onClick={prevSlide} className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
+      <TiArrowRightOutline  onClick={nextSlide} className="cursor-pointer hover:text-blue-400 transition-colors duration-500"/>
       </div>
       
     </div>
