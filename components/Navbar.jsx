@@ -44,14 +44,14 @@ const Navbar = () => {
           <Link href="/">
             <Image
               src="/image/logo.webp"
-              width={100}
+              width={110}
               height={100}
               alt="alt"
               className="cursor-pointer  hover:scale-110 bg-transparent rounded-md transition-all duration-500 "
             />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:justify-center">
-            <ul className="flex items-center text-blue-950 text lg:text-sm lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
+            <ul className="flex items-center text-blue-950 text lg:text-normal lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
               <li className="flex gap-2 items-center">
                 <FaHome size={20} />
                 <Link
@@ -66,7 +66,7 @@ const Navbar = () => {
                 <Link
                   href="/haqqimizda"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
-                  Haqqıımızda
+                  Haqqımızda
                 </Link>
               </li>
               <li className="flex gap-2 items-center">

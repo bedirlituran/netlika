@@ -1,6 +1,6 @@
 
 
-import Slide from "../components/Slide";
+import Slide from "../components/Main";
 
 
 

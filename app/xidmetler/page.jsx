@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import Xidmet from '../../components/Xidmet'
-import Yenicarding from '../../components/Yenicarding'
+import Yenicarding from '../../components/Carding'
 import { NextSeo } from 'next-seo'
 const page = () => {
   return (

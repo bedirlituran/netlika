@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const Pricing = () => {
     return (
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="px-4 py-16 mx-auto font-bold bg-gray-50 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className=" flex flex-col text-center file:max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
           
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -34,7 +34,7 @@ export const Pricing = () => {
             </span>{' '}
             və TV paketləri.
           </h2>
-          <p className="text-center text-gray-700 md:text-lg">
+          <p className=" text-gray-700 md:text-lg">
             Zövqünüzə uyğun paketləri bizdən sifariş edə bilərsiniz.
           </p>
         </div>
@@ -43,7 +43,7 @@ export const Pricing = () => {
             <div className="text-center">
               <div className="text-lg font-semibold">Start</div>
               <div className="flex items-center justify-center mt-2">
-                <div className="mr-1 text-5xl font-bold">TV</div>
+                <div className="mr-1 text-4xl font-bold">Tv</div>
               </div>
               <div className="mt-2 space-y-3">
                 <Link href='/channelList' className="text-gray-700 cursor-poinet  hover:underline hover:text-blue-400 transition-all duration-500">150 + baxımlı kanal</Link>
@@ -73,7 +73,7 @@ export const Pricing = () => {
             <div className="text-center">
               <div className="text-lg font-semibold">Pro</div>
               <div className="flex items-center justify-center mt-2">
-                <div className="mr-1 text-5xl font-bold">TV+İnternet</div>
+                <div className="mr-1 text-4xl font-bold">Tv & İnternet</div>
                 
               </div>
               <div className="mt-2 space-y-3">
@@ -96,11 +96,11 @@ export const Pricing = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow">
+          <div className="flex flex-col justify-between p-8 text-center transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow">
             <div className="text-center">
               <div className="text-lg font-semibold">Business</div>
               <div className="flex items-center justify-center mt-2">
-                <div className="mr-1 text-5xl font-bold">İP Tv</div>
+                <div className="mr-1 text-4xl font-bold">İP Tv</div>
                 
               </div>
               <div className="mt-2 space-y-3">
