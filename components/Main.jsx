@@ -32,7 +32,7 @@ const Header = () => {
             </span>
           </h2>
           <p className="pr-5 mb-5 text-base text-gray-700 md:text-lg">
-           "İnovativ texnologiya və əyləncənin bir araya gəldiyi Gammanet TV, ən yüksək keyfiyyətli yayım təcrübəsini təqdim edir. Limitsiz əyləncəni kəşf edin, arzuladığınız içerikləri bizimlə yaşayın!"
+           "İnnovativ texnologiya və əyləncənin bir araya gəldiyi Gammanet TV, ən yüksək keyfiyyətli yayım təcrübəsini təqdim edir. Limitsiz əyləncəni kəşf edin, arzuladığınız xəyalları bizimlə yaşayın!"
           </p>
           <div className="flex items-center  justify-center">
             <a
