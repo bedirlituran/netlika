@@ -15,20 +15,19 @@ const images = [
 ];
 
 const settings = {
-  dots: true,
-  dotsColor:"white",
   infinite: true,
-  speed: 2000,
+  speed: 3000,
   slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 3000,
   arrows: true,
+  draggable: true,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
       },
     },
     {
@@ -37,6 +36,7 @@ const settings = {
         slidesToShow: 1,
       },
     },
+    
   ],
 };
 
