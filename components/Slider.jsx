@@ -43,7 +43,6 @@ const settings = {
 const Carousel = () => {
   return (
     <div className="mx-auto bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 border border-black p-4 mb-10 w-[90%] rounded-xl shadow-xl">
-      <h1 className="text-center text-4xl font-bold mb-8 text-white">Kampanyalar</h1>
 
       <Slider {...settings} className="rounded-xl shadow-xl">
         {images.map((image, index) => (
@@ -51,7 +50,7 @@ const Carousel = () => {
             <Image
               src={image}
               width={500}
-              height={800}
+              height={500}
               alt={`Slide ${index + 1}`}
               className="rounded-box shadow-xl object-cover w-full h-full"
             />
