@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const Pricing = () => {
     return (
-      <div className="px-2 py-1 mb-16 mx-auto font-bold bg-gray-50 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-4 overflow-y-hidden">
+      <div className="px-2 py-1 mb-16 mx-auto font-bold  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-4 overflow-y-hidden">
         <div className=" flex flex-col text-center file:max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
           
           
