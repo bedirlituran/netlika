@@ -39,8 +39,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="font-sans file:flex items-center justify-between px-2 transition-colors duration-500  w-full h-16  border-gray-300  text-blue-950" style={{ 'background': '#ffff00' }}>
-        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-16 lg:items-center sticky top-0 p-3 min-w-full">
+      <div className="font-sans file:flex items-center justify-between px-2 transition-colors duration-500  w-full h-20 sticky top-0 z-50  border-gray-300  text-blue-950" style={{ 'background': '#ffff00' }}>
+        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-20 lg:items-center sticky top-0 p-3 min-w-full">
           <Link href="/">
             <Image
               src="/image/logo2.webp"

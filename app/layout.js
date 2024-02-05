@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <Link rel="icon" href="/image/logo.webp"></Link>
       </Head>
-        <body className={`${inter} flex-col justify-between`}>
+        <body className={`${inter} flex-col justify-between `}>
           <Navbar />
           {children}
           <WhatsAppButton />
