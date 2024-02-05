@@ -20,7 +20,7 @@ const Xidmet = () => {
 
   return (
     <>
-      <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-100 min-h-auto">
+      <div className="rounded-2xl flex flex-col items-center justify-center m-auto  min-h-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-semibold tracking-wider lg:mb-2  mt-3">
           Xidmətlər
         </h1>

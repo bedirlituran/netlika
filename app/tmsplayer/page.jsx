@@ -19,8 +19,8 @@ const HomePage = () => {
         title="Gammanet TV TMSPlayer Endirme Linkləri"
         description="TMS Player Endir"
       />
-      <div className="min-h-screen  flex items-center justify-center bg-gray-100">
-        <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full mt-10">
+      <div className="min-h-screen  flex items-start justify-center">
+        <div className="p-8  max-w-2xl w-full mt-10">
           <h1 className="text-4xl font-bold mb-6 text-center">
             Gammanet TV Player Endirme Linkləri
           </h1>

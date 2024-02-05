@@ -5,7 +5,7 @@ import { NextSeo } from 'next-seo';
 
 const IPTVComponent = () => {
   return (
-    <div className="font-custom bg-gray-100 p-8 h-screen rounded-md shadow-md">
+    <div className="font-custom  p-8 h-screen rounded-md shadow-md">
       <NextSeo title="İPTV" description="Gammanet İPTV xidməti" />
       <h1 className="text-3xl font-bold mb-6">Gammanet - İPTV xidməti </h1>
       <p className="text-lg mb-4">

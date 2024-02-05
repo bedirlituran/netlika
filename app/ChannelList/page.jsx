@@ -340,7 +340,7 @@ const ChannelList = () => {
       <h1 className="text-2xl font-bold mb-4">TV Kanal Siyahısı</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {channels.map((channel) => (
-          <div key={channel.id} className=" bg-gray-100 p-4 rounded-md text-center font-semibold">
+          <div key={channel.id} className="p-4 rounded-md text-center font-semibold">
             <div className='flex gap-3 items-center'>
                 <p className='text-start'>{channel.id}.</p>
             <p className="text-center font-semibold">{channel.name}</p></div>

@@ -5,10 +5,9 @@ import { NextSeo } from 'next-seo';
 
 const GammaNetPage = () => {
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div >
       <NextSeo title="GammaNet Şirkəti" description='Gammanet ile Ən yüksək səviyyəli xidmətlər' />
-
-      <div className="max-w-2xl bg-white shadow-md rounded-md p-2 mx-1 md:mx-2 lg:h-screen xl:h-screen">
+      <div className="flex-col m-auto items-start max-w-2xl  p-2 mx-1 md:mx-2 lg:h-screen xl:h-screen">
         <h1 className="text-base md:text-lg lg:text-xl font-bold mb-1 md:mb-2">GammaNet Şirkəti</h1>
         <p className="text-xs md:text-sm lg:text-base mb-1 md:mb-2">
           Ən yüksək səviyyəli xidmətlər və təcrübə sahibi personalımızla GammaNet, əsasən müştərilərimizin etibarı və məmnuniyyəti üçün çalışan bir şirkətdir.

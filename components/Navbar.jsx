@@ -47,7 +47,7 @@ const Navbar = () => {
               width={110}
               height={100}
               alt="alt"
-              className="cursor-pointer mb-10  hover:scale-110 bg-transparent rounded-md transition-all duration-500 "style={{ 'background': '#ffff00' }}
+              className="cursor-pointer hover:scale-110 bg-transparent rounded-md transition-all duration-500 "style={{ 'background': '#ffff00' }}
             />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:justify-center">
