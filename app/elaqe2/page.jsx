@@ -5,7 +5,7 @@ import { NextSeo } from 'next-seo';
 
 const HomePage = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 p-4 md:p-8  border border-gray-400">
+    <section className="bg-white dark:bg-gray-900 p-4 md:p-8">
       <NextSeo title="Bizimlə əlaqə" description='Gammanet ile əlaqə'/>
       <div className="container mx-auto">
         <div className="text-center">
@@ -33,8 +33,8 @@ const HomePage = () => {
               </svg>
             </span>
             <h2 className="mt-4 text-lg md:text-xl font-medium text-red-500 dark:text-white">Kabel Tv & Internet</h2>
-            <p className="mt-2 text-gray-500 dark:text-gray-400">-</p><br />
-            <p className="mt-2 text-gray-500 dark:text-gray-400">077 610 48 88<br />012 310 48 88</p>
+          
+            <p className="mt-2 text-gray-500 dark:text-gray-400">-<br></br>077 610 48 88<br />012 310 48 88</p>
           </div>
 
           <div className="text-center">
@@ -44,9 +44,9 @@ const HomePage = () => {
               </svg>
             </span>
             <h2 className="mt-4 text-lg md:text-xl font-medium text-red-500 dark:text-white">Email</h2>
-            <p className="mt-2 text-gray-500 dark:text-gray-400">-</p>
-            <p className="mt-2 text-gray-500 dark:text-gray-400">email əlaqə</p>
-            <p className="mt-2 text-gray-500 dark:text-gray-400">gamma_net@mail.ru</p>
+          
+            <p className="mt-2 text-gray-500 dark:text-gray-400">-<br></br>email əlaqə<br></br>gamma_net@mail.ru</p>
+            
           </div>
         </div>
       </div>
