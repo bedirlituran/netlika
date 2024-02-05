@@ -6,7 +6,7 @@ import { NextSeo } from 'next-seo';
 const HomePage = () => {
   return (
     <div>
-    <div className=" dark:bg-gray-900 mt-20 p-10 md:p-8 flex flex-col items-center justify-center">
+    <div className=" dark:bg-gray-900 flex flex-col items-center justify-around lg:mt-20 lg:p-10 md:p-8 ">
       <NextSeo title="Bizimlə əlaqə" description='Gammanet ile əlaqə'/>
       <div className="container mx-auto">
         <div className="text-center">
