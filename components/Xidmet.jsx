@@ -20,8 +20,8 @@ const Xidmet = () => {
 
   return (
     <>
-      <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-100 min-h-auto  p-3">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold font-turan tracking-wider mb-2 lg:mb-4 gap-1 mt-10">
+      <div className="rounded-2xl flex flex-col items-center justify-center m-auto bg-gray-100 min-h-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-semibold tracking-wider lg:mb-2  mt-3">
           Xidmətlər
         </h1>
         <p className=" font-light text-2xl sm:text-3xl md:text-3xl  lg:my-5">
@@ -29,7 +29,7 @@ const Xidmet = () => {
         </p>
 
         <div className="slider-container transition-all duration-500">
-      <div className="grid grid-cols-1 sm:grid-cols-1  gap-6 mt-8 lg:mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-1  gap-3 mt-4 lg:mt-10">
         {currentIndex === 0 && <Card2 />}
         {currentIndex === 1 && <Card3 />}
         {currentIndex === 2 && <Card4 />}

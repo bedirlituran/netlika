@@ -5,10 +5,11 @@ import Yenicarding from '../../components/Carding'
 import { NextSeo } from 'next-seo'
 const page = () => {
   return (
-    <div>
+    <div className='flex-col justify-around'>
       <NextSeo title="Gammanet tv Xidmətlər" description='Xidmətlərimizlə tanış olun'/>
-      <Xidmet />
-      <Yenicarding />
+      <div className='h-screen'><Xidmet/></div>
+      <div className='mb-10'><Yenicarding /></div>
+      
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Sosial() {
   return (
-    <footer className="bg-gray-800 text-white p-6 font-custom">
+    <footer className="bg-gray-800 text-white p-1 font-custom">
       <div className="flex items-center justify-center space-x-6">
         <a
           href="#"

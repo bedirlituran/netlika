@@ -14,14 +14,13 @@ const HomePage = () => {
   };
 
   return (
-    <>
+      <div className="flex justify-center items-end">
       <NextSeo
         title="Gammanet TV TMSPlayer Endirme Linkləri"
         description="TMS Player Endir"
       />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
-          <h1 className="text-4xl font-bold mb-6 text-center">
+        <div className=" p-8 rounded-lg shadow-md max-w-2xl w-full">
+          <h1 className="text-4xl font-bold  text-center">
             Gammanet TV Player Endirme Linkləri
           </h1>
           <p className="text-lg text-center mb-8">
@@ -41,7 +40,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 
