@@ -8,7 +8,7 @@ const HomePage = () => {
     <div>
     <div className=" dark:bg-gray-900 flex flex-col items-center justify-around lg:mt-20 lg:p-10 md:p-8 ">
       <NextSeo title="Bizimlə əlaqə" description='Gammanet ile əlaqə'/>
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-10">
         <div className="text-center">
           <h1 className="text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-10 font-semibold text-gray-800 dark:text-white">
             Bizimlə əlaqə
