@@ -328,7 +328,7 @@ const channels = [
 const ChannelList = () => {
   return (
 
-    <motion.div className="font-custom container mx-auto mt-8 mb-8 "  initial={{ opacity: 0, scale: 0.5 }}
+    <motion.div className="font-custom container mx-auto mt-8 mb-8 dark:text-black "  initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5 }}>
       <NextSeo
