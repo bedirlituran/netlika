@@ -10,6 +10,8 @@ import { HiPhone } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { PiTelevisionFill } from "react-icons/pi";
 import { SiPicartodottv } from "react-icons/si";
+import { MdRateReview } from "react-icons/md";
+
 
 
 
@@ -67,6 +69,14 @@ const Navbar = () => {
                   href="/haqqimizda"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                   Haqqımızda
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <MdRateReview size={20} />
+              <Link
+                  href="/tarifler"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Tariflər
                 </Link>
               </li>
               <li className="flex gap-2 items-center">
