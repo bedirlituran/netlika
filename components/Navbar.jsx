@@ -76,7 +76,7 @@ const Navbar = () => {
               <Link
                   href="/tarifler"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
-                  Tariflər
+                  Qoşul
                 </Link>
               </li>
               <li className="flex gap-2 items-center">
@@ -206,7 +206,7 @@ const Navbar = () => {
                   <Link
                     href="/tarifler"
                     className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
-                    Tarifler
+                    Qoşul
                   </Link>
                 </li>
                 <li className="flex gap-2">
