@@ -124,7 +124,7 @@ const Navbar = () => {
 
           <div className="  items-center   text-black hidden lg:block">
             <Link
-              href="https://fpay.az/guest/payments/new-payment/category/4950/merchant/6034"
+              href="https://short.fpay.az/gammanet"
               target="blank"
               className="p-2 rounded-2xl text-black border border-black hover:bg-yellow-500 transition-all duration-500" >
               Online Ödə
@@ -232,7 +232,7 @@ const Navbar = () => {
                 </li>
                 <li className="flex  items-center  text-blue-950">
                 <Link
-              href="https://fpay.az/guest/payments/new-payment/category/4950/merchant/6034"
+              href="https://short.fpay.az/gammanet"
               target="blank"
               className="p-2  text-black   hover:bg-yellow-500 transition-all duration-500 border border-red-200 rounded-2xl" >
               Online Ödə
