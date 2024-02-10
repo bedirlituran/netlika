@@ -202,6 +202,14 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="flex gap-2">
+                <FaHandsHelping size={20} />
+                  <Link
+                    href="/tarifler"
+                    className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
+                    Tarifler
+                  </Link>
+                </li>
+                <li className="flex gap-2">
                   <FaHandsHelping size={20} />
                   <Link
                     href="/xidmetler"
