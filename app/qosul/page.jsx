@@ -85,7 +85,7 @@ const Page = () => {
               className="input input-bordered placeholder:opacity-50 border-gray-400 w-full bg-gray-100"
             />
           </div>
-          <button className="bg-gray-200  text-slate-400 p-4   text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ">
+          <button className="bg-blue-200  text-blue-500 p-4   text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ">
             Təsdiq et
           </button>
         </div>
@@ -105,7 +105,7 @@ const Page = () => {
               checked={selectedPackage === "3azn"}
             />
             <h1>Standart - 3 gün (SuperSport daxil)</h1>
-            <button className="flex bg-gray-200  text-slate-400 font-bold text-xl p-2 rounded-2xl">
+            <button className="flex bg-blue-200  text-blue-500 font-semibold text-lg p-2 rounded-2xl">
               3 AZN
             </button>
           </div>
@@ -118,7 +118,7 @@ const Page = () => {
               checked={selectedPackage === "5azn"}
             />
             <h1>Standart - 3 gün (SuperSport daxil)</h1>
-            <button className="flex bg-gray-200  text-slate-400  font-bold text-xl p-2 rounded-2xl">
+            <button className="flex bg-blue-200  text-blue-500 font-semibold text-lg p-2 rounded-2xl">
               5 AZN
             </button>
           </div>
@@ -131,7 +131,7 @@ const Page = () => {
               checked={selectedPackage === "10azn"}
             />
             <h1>Standart - 3 gün (SuperSport daxil)</h1>
-            <button className="flex bg-gray-200  text-slate-400 font-bold text-xl p-2 rounded-2xl">
+            <button className="flex bg-blue-200  text-blue-500 font-semibold text-lg p-2 rounded-2xl">
               10 AZN
             </button>
           </div>
@@ -141,7 +141,7 @@ const Page = () => {
           <p ref={qiymetRef} className="font-extrabold text-2xl text-black">
             {price} AZN
           </p>
-          <button className="bg-gray-200  text-slate-400 font-bold text-xl  p-4 rounded-2xl shadow-lg hover:opacity-80 transition-all">
+          <button className="bg-blue-200  text-blue-500 font-bold text-xl  p-4 rounded-2xl shadow-lg hover:opacity-80 transition-all">
             <a href="https://short.fpay.az/gammanet"> Ödəniş et</a>
           </button>
         </div>
