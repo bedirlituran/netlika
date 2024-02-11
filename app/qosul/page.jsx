@@ -68,9 +68,10 @@ const Page = () => {
               className="input input-bordered placeholder:opacity-75 w-[100px] border-gray-400 bg-gray-100 mr-2"
               defaultValue=""
             >
-              <option value="" disabled hidden>
+              <option value="" className="opacity-75" disabled hidden>
                 --
               </option>
+              <option value="099">010</option>
               <option value="099">099</option>
               <option value="055">055</option>
               <option value="051">051</option>
@@ -84,7 +85,7 @@ const Page = () => {
               className="input input-bordered placeholder:opacity-50 border-gray-400 w-full bg-gray-100"
             />
           </div>
-          <button className="p-3 bg-yellow-400 text-black rounded-xl w-full md:w-auto">
+          <button className="bg-blue-700 font-semibold text-white p-4 rounded-2xl shadow-lg hover:opacity-80 transition-all ">
             Təsdiq et
           </button>
         </div>
@@ -98,49 +99,49 @@ const Page = () => {
           <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around bg-gray-100   border border-gray-400 rounded-lg">
             <input
               type="checkbox"
-              className="checkbox checkbox-warning"
+              className="checkbox checkbox-primary"
               value="3azn"
               onChange={handleCheckboxChange}
               checked={selectedPackage === "3azn"}
             />
             <h1>Standart - 3 gün (SuperSport daxil)</h1>
-            <button className="flex bg-yellow-400 text-black p-2 rounded-2xl">
+            <button className="flex bg-blue-400 text-black p-2 rounded-2xl">
               3 AZN
             </button>
           </div>
           <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around  bg-gray-100  border border-gray-400 rounded-lg">
             <input
               type="checkbox"
-              className="checkbox checkbox-warning"
+              className="checkbox checkbox-primary"
               value="5azn"
               onChange={handleCheckboxChange}
               checked={selectedPackage === "5azn"}
             />
             <h1>Standart - 3 gün (SuperSport daxil)</h1>
-            <button className="flex bg-yellow-400 text-black p-2 rounded-2xl">
+            <button className="flex bg-blue-400 text-black p-2 rounded-2xl">
               5 AZN
             </button>
           </div>
           <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around bg-gray-100  border border-gray-400 rounded-lg">
             <input
               type="checkbox"
-              className="checkbox checkbox-warning"
+              className="checkbox checkbox-primary"
               value="10azn"
               onChange={handleCheckboxChange}
               checked={selectedPackage === "10azn"}
             />
             <h1>Standart - 3 gün (SuperSport daxil)</h1>
-            <button className="flex bg-yellow-400 text-black p-2 rounded-2xl">
+            <button className="flex bg-blue-400 text-black p-2 rounded-2xl">
               10 AZN
             </button>
           </div>
         </div>
         <div className="flex-col text-center space-y-4 mt-8 md:mt-12">
           <h1 className="font-bold text-3xl">Təsdiqlə və qoşul</h1>
-          <p ref={qiymetRef} className="font-bold text-2xl text-red-400">
+          <p ref={qiymetRef} className="font-extrabold text-2xl text-black">
             {price} AZN
           </p>
-          <button className="bg-yellow-400 font-bold text-black p-4 rounded-2xl shadow-lg hover:scale-105 transition-all duration-500">
+          <button className="bg-blue-700 font-bold text-white p-4 rounded-2xl shadow-lg hover:opacity-80 transition-all">
             <a href="https://short.fpay.az/gammanet"> Ödəniş et</a>
           </button>
         </div>
