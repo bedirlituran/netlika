@@ -99,7 +99,7 @@ const Page = () => {
           <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around bg-gray-100   border border-gray-400 rounded-lg">
             <input
               type="checkbox"
-              className="checkbox checkbox-primary"
+              className="checkbox border-gray-400 bg-blue-200 checked:bg-blue-200 [--chkbg:theme(colors.blue.200)]  [--chkbd:theme(colors.gray.400)] [--chkfg:#3B82F6]"
               value="3azn"
               onChange={handleCheckboxChange}
               checked={selectedPackage === "3azn"}
@@ -112,7 +112,7 @@ const Page = () => {
           <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around  bg-gray-100  border border-gray-400 rounded-lg">
             <input
               type="checkbox"
-              className="checkbox checkbox-primary"
+              className="checkbox border-gray-400 bg-blue-200 checked:bg-blue-200 [--chkbg:theme(colors.blue.200)]  [--chkbd:theme(colors.gray.400)] [--chkfg:#3B82F6]"
               value="5azn"
               onChange={handleCheckboxChange}
               checked={selectedPackage === "5azn"}
@@ -125,7 +125,7 @@ const Page = () => {
           <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around bg-gray-100  border border-gray-400 rounded-lg">
             <input
               type="checkbox"
-              className="checkbox checkbox-primary"
+              className="checkbox border-gray-400 bg-blue-200 checked:bg-blue-200 [--chkbg:theme(colors.blue.200)]  [--chkbd:theme(colors.gray.400)] [--chkfg:#3B82F6]"
               value="10azn"
               onChange={handleCheckboxChange}
               checked={selectedPackage === "10azn"}
