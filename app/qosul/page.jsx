@@ -56,20 +56,20 @@ const Page = () => {
           <input
             type="text"
             placeholder="Ad"
-            className="input input-bordered placeholder:opacity-50 w-full md:w-[300px] bg-gray-100 mb-2"
+            className="input input-bordered placeholder:opacity-75 w-full md:w-[300px] border-gray-400 bg-gray-100 mb-2"
           />
           <input
             type="text"
             placeholder="Soyad"
-            className="input input-bordered placeholder:opacity-50 w-full md:w-[300px] bg-gray-100 mb-2"
+            className="input input-bordered placeholder:opacity-75 w-full md:w-[300px] border-gray-400 bg-gray-100 mb-2"
           />
           <div className="flex items-center mb-2">
             <select
-              className="input input-bordered placeholder:opacity-50 w-[100px] bg-gray-100 mr-2"
+              className="input input-bordered placeholder:opacity-75 w-[100px] border-gray-400 bg-gray-100 mr-2"
               defaultValue=""
             >
               <option value="" disabled hidden>
-                Kod
+                --
               </option>
               <option value="099">099</option>
               <option value="055">055</option>
@@ -81,7 +81,7 @@ const Page = () => {
             <input
               type="text"
               placeholder="Telefon Nömrəsi"
-              className="input input-bordered placeholder:opacity-50 w-full bg-gray-100"
+              className="input input-bordered placeholder:opacity-50 border-gray-400 w-full bg-gray-100"
             />
           </div>
           <button className="p-3 bg-yellow-400 text-black rounded-xl w-full md:w-auto">
@@ -95,7 +95,7 @@ const Page = () => {
           </h1>
         </div>
         <div className="flex flex-col justify-center items-center gap-4 mt-5">
-          <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around border border-gray-500">
+          <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around bg-gray-100   border border-gray-400 rounded-lg">
             <input
               type="checkbox"
               className="checkbox checkbox-warning"
@@ -108,7 +108,7 @@ const Page = () => {
               3 AZN
             </button>
           </div>
-          <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around border border-gray-500">
+          <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around  bg-gray-100  border border-gray-400 rounded-lg">
             <input
               type="checkbox"
               className="checkbox checkbox-warning"
@@ -121,7 +121,7 @@ const Page = () => {
               5 AZN
             </button>
           </div>
-          <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around border border-gray-500">
+          <div className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around bg-gray-100  border border-gray-400 rounded-lg">
             <input
               type="checkbox"
               className="checkbox checkbox-warning"

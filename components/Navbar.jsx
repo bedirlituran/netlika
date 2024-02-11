@@ -10,7 +10,8 @@ import { HiPhone } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { PiTelevisionFill } from "react-icons/pi";
 import { SiPicartodottv } from "react-icons/si";
-import { MdRateReview } from "react-icons/md";
+import { MdCastConnected } from "react-icons/md";
+
 
 
 
@@ -72,9 +73,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="flex items-center gap-2">
-                <MdRateReview size={20} />
+                <MdCastConnected size={20} />
               <Link
-                  href="/tarifler"
+                  href="/qosul"
                   className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
                   Qoşul
                 </Link>
@@ -202,9 +203,9 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="flex gap-2">
-                <FaHandsHelping size={20} />
+                <MdCastConnected size={20} />
                   <Link
-                    href="/tarifler"
+                    href="/qosul"
                     className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
                     Qoşul
                   </Link>
