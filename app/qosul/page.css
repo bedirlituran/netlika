@@ -1,0 +1,12 @@
+.message {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Geçiş süresi ve animasyon */
+  }
+  
+  .show {
+    opacity: 1; /* Span görünür hale gelir */
+  }
+  
+  .hide {
+    opacity: 0; /* Span gizlenir */
+  }
