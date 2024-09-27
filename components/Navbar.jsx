@@ -43,14 +43,15 @@ const Navbar = () => {
   return (
     <>
       <div className="font-sans file:flex items-center justify-between px-2 transition-colors duration-500  w-full h-20 sticky top-0 z-50  border-gray-300  text-blue-950" style={{ 'background': '#ffff00' }}>
-        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  h-auto lg:items-center sticky top-0 p-3 min-w-full">
+        <nav className="flex justify-between items-center font-medium lg:flex  lg:justify-between  lg:items-center sticky top-0 p-3 min-w-full">
           <Link href="/">
             <Image
               src="/image/logo2.webp"
-              width={110}
-              height={100}
-              alt="alt"
-              className="cursor-pointer hover:scale-105 bg-transparent rounded-md transition-all duration-500 "style={{ 'background': '#ffff00' }}
+              width={120}
+              height={50}
+              alt="Gammanet.az"
+              priority
+              className="cursor-pointer  bg-transparent rounded-md transition-all "style={{ 'background': '#ffff00',width:"auto",height:"auto" }}
             />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:justify-center">
