@@ -1,15 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import "./page.css";
 import PopupExample from "@/components/PopupExample/PopupExample";
 
 const Page = () => {
-  const [otpVisible, setOtpVisible] = useState(false); // OTP pop-up durumu
-  const [isCheckboxDisabled, setIsCheckboxDisabled] = useState(true); // Checkbox'lar başlangıçta pasif
-  const [isPaymentEnabled, setIsPaymentEnabled] = useState(false); // Ödeme butonu başlangıçta pasif
-  const [selectedPackage, setSelectedPackage] = useState([]); // Seçili paketler
-  const [price, setPrice] = useState(0); // Seçilen paketlerin toplam fiyatı
+  const [otpVisible, setOtpVisible] = useState(false);
+  const [isCheckboxDisabled, setIsCheckboxDisabled] = useState(true);
+  const [isPaymentEnabled, setIsPaymentEnabled] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState([]);
+  const [price, setPrice] = useState(0);
+  const [otpCode, setOtpCode] = useState("");
+  const [error, setError] = useState(null);
 
   const toggleOtpPopup = () => {
     setOtpVisible((prev) => !prev);
@@ -22,20 +25,62 @@ const Page = () => {
     formState: { errors },
   } = useForm();
 
-  // Form gönderildiğinde OTP doğrulama açılır
-  const onSubmit = (data) => {
-    toggleOtpPopup(); // OTP pop-up açılır
+  // Form gönderildiğinde OTP doğrulama açılır ve OTP gönderilir
+  const onSubmit = async (data) => {
+    try {
+      await sendOtp(data.prefix + data.phoneNumber);
+      toggleOtpPopup();
+    } catch (error) {
+      setError("OTP gönderme hatası. Lütfen tekrar deneyin.");
+    }
+  };
+
+  // OTP gönderme fonksiyonu
+  const sendOtp = async (phoneNumber) => {
+    const url = "http://sendsms.az/smxml/api"; // API URL
+    const controlId = `control-${Date.now()}`;
+    const otp = Math.floor(1000 + Math.random() * 9000);
+    const data = `
+    <request>
+        <head>
+            <operation>submit</operation>
+            <login>gammanet</login> <!-- Login -->
+            <password>G!.23Ea</password> <!-- Password -->
+            <controlid>${controlId}</controlid>
+            <bulkmessage>message</bulkmessage>
+            <title>GAMMANET</title> <!-- Title -->
+            <scheduled>NOW</scheduled>
+            <isbulk>false</isbulk>
+        </head>
+        <body>
+            <msisdn>${phoneNumber}</msisdn>
+            <message>Your OTP code is ${otp}</message>
+        </body>
+    </request>
+    `;
+
+    setOtpCode(otp);
+    try {
+      await axios.post(url, data, {
+        headers: {
+          'Content-Type': 'application/xml',
+        },
+      });
+      console.log("OTP başarıyla gönderildi:", otp);
+    } catch (error) {
+      setError("OTP gönderme hatası. Lütfen tekrar deneyin.");
+      console.error('Hata:', error);
+    }
   };
 
   // OTP doğrulandıktan sonra checkbox ve ödeme aktif edilir
-  const handleOtpSubmit = async (otp) => {
-    try {
-      // OTP doğrulama işlemi yapılmalı
-      setIsCheckboxDisabled(false); // Checkbox'lar aktif edilir
-      setIsPaymentEnabled(true); // Ödeme butonu aktif edilir
-      toggleOtpPopup(); // OTP pop-up kapanır
-    } catch (error) {
-      console.error("OTP doğrulama hatası:", error);
+  const handleOtpSubmit = async (enteredOtp) => {
+    if (enteredOtp === otpCode.toString()) {
+      setIsCheckboxDisabled(false);
+      setIsPaymentEnabled(true);
+      toggleOtpPopup();
+    } else {
+      setError("Yanlış OTP kodu.");
     }
   };
 
@@ -103,9 +148,8 @@ const Page = () => {
           <input
             type="text"
             placeholder="Ad"
-            className={`input input-bordered w-full md:w-[300px] border-gray-400 bg-gray-100 mb-2 ${
-              errors.name ? "border-red-500" : ""
-            }`}
+            className={`input input-bordered w-full md:w-[300px] border-gray-400 bg-gray-100 mb-2 ${errors.name ? "border-red-500" : ""
+              }`}
             {...register("name", {
               required: "Ad sahəsi boş ola bilməz",
               minLength: { value: 2, message: "Ad ən az 2 hərf olmalıdır" },
@@ -170,6 +214,8 @@ const Page = () => {
             Təsdiq et
           </button>
 
+          {error && <p className="text-red-500 mt-4">{error}</p>}
+
           {/* Paket Seçimi */}
           <div className="flex justify-center items-center mt-8 md:mt-12">
             <h1 className="font-bold text-center md:text-3xl">Tarif paketini seç</h1>
@@ -178,36 +224,29 @@ const Page = () => {
             {["3azn", "5azn", "10azn"].map((pkg) => (
               <div
                 key={pkg}
-                className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around bg-gray-100 border border-gray-400 rounded-lg"
+                className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around border-2 border-gray-400 rounded-md"
               >
                 <input
                   type="checkbox"
-                  className="checkbox border-gray-400 bg-blue-200 checked:bg-blue-200"
                   value={pkg}
                   onChange={handleCheckboxChange}
-                  disabled={isCheckboxDisabled}
+                  disabled={!isPaymentEnabled} // Ödeme butonu aktifse checkbox'lar aktif
                 />
-                <h1>{`Standart - ${pkg} (SuperSport daxil)`}</h1>
-                <button className="flex bg-blue-200 text-blue-500 font-semibold text-lg p-2 rounded-2xl">
-                  {pkg.toUpperCase()}
-                </button>
+                <label className="text-xl">{pkg}</label>
               </div>
             ))}
           </div>
 
-          {/* Toplam Fiyat ve Ödeme Butonu */}
-          <div className="flex-col text-center space-y-4 mt-8 md:mt-12">
-            <h1 className="font-bold text-3xl">Təsdiqlə və qoşul</h1>
-            <p className="font-extrabold text-2xl text-black">{price} AZN</p>
-            <button
-              type="button"
-              className="bg-blue-200 text-blue-500 font-bold text-xl p-4 rounded-2xl shadow-lg hover:opacity-80 transition-all"
-              onClick={handlePayment}
-              disabled={!isPaymentEnabled}
-            >
-              Ödəniş et
-            </button>
-          </div>
+          {/* Ödeme Butonu */}
+          <button
+            type="button"
+            onClick={handlePayment}
+            className={`bg-green-300 text-white p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all mt-8 ${isCheckboxDisabled ? "cursor-not-allowed opacity-50" : ""
+              }`}
+            disabled={isCheckboxDisabled}
+          >
+            Ödə
+          </button>
         </div>
       </form>
     </div>
