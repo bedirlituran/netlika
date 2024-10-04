@@ -37,43 +37,40 @@ const Page = () => {
 
   // OTP gönderme fonksiyonu
   const sendOtp = async (phoneNumber) => {
-    const url = "http://sendsms.az/smxml/api"; // API URL
+    const url = "https://sendsms.az/smxml/api"; // API URL
     const controlId = `control-${Date.now()}`;
     const otp = Math.floor(1000 + Math.random() * 9000);
     const data = `
-    <request>
-        <head>
-            <operation>submit</operation>
-            <login>gammanet</login> <!-- Login -->
-            <password>G!.23Ea</password> <!-- Password -->
-            <controlid>${controlId}</controlid>
-            <bulkmessage>message</bulkmessage>
-            <title>GAMMANET</title> <!-- Title -->
-            <scheduled>NOW</scheduled>
-            <isbulk>false</isbulk>
-        </head>
-        <body>
-            <msisdn>${phoneNumber}</msisdn>
-            <message>Your OTP code is ${otp}</message>
-        </body>
-    </request>
+   <?xml version="1.0" encoding="UTF-8"?>
+<request>
+  <head>
+    <operation>submit</operation>
+    <login>gammanet</login>
+    <password>G!.23Ea</password>
+    <controlid>123-abcdeddd</controlid>
+    <title>GAMMANET</title>
+    <bulkmessage>Fuadddcik</bulkmessage>
+    <scheduled>NOW</scheduled>
+    <isbulk>true</isbulk>
+  </head>
+  <body>
+    <msisdn>994558080801</msisdn>
+  </body>
+</request>
     `;
 
     setOtpCode(otp);
-    try {
-      await axios.post(url, data, {
-        headers: {
-          'Content-Type': 'application/xml',
-        },
-      });
-      console.log("OTP başarıyla gönderildi:", otp);
-    } catch (error) {
-      setError("OTP gönderme hatası. Lütfen tekrar deneyin.");
-      console.error('Hata:', error);
-    }
+    await axios.post(url, data, {
+      headers: {
+        'Content-Type': 'application/xml',
+      },
+    });
+      console.log("OTP  gönderildi:", otp);
+  
+    
   };
 
-  // OTP doğrulandıktan sonra checkbox ve ödeme aktif edilir
+  // OTP gonderildikde sonra checkbox ve ödeme aktif edilir
   const handleOtpSubmit = async (enteredOtp) => {
     if (enteredOtp === otpCode.toString()) {
       setIsCheckboxDisabled(false);
