@@ -1,9 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import "./page.css";
-import PopupExample from "@/components/PopupExample/PopupExample";
+import PopupExample from "@/components/PopupExample/PopupExample"; 
 
 const Page = () => {
   const [otpVisible, setOtpVisible] = useState(false);
@@ -13,96 +12,128 @@ const Page = () => {
   const [price, setPrice] = useState(0);
   const [otpCode, setOtpCode] = useState("");
   const [error, setError] = useState(null);
+  const [otpSent, setOtpSent] = useState(false); 
 
   const toggleOtpPopup = () => {
     setOtpVisible((prev) => !prev);
+    console.log("otp tesdiq edildi")
   };
 
-  // React Hook Form kullanımı
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  // Form gönderildiğinde OTP doğrulama açılır ve OTP gönderilir
   const onSubmit = async (data) => {
     try {
-      await sendOtp(data.prefix + data.phoneNumber);
+      const formattedPhoneNumber = "994" + data.prefix + data.phoneNumber;
+  
+      await sendOtp(formattedPhoneNumber);
+      setOtpSent(true);
       toggleOtpPopup();
     } catch (error) {
-      setError("OTP gönderme hatası. Lütfen tekrar deneyin.");
+      setError("OTP göndərmə xətası. Zəhmət olmasa, yenidən cəhd edin.");
     }
   };
 
-  // OTP gönderme fonksiyonu
-  const sendOtp = async (phoneNumber) => {
-    const url = "https://sendsms.az/smxml/api"; // API URL
-    const controlId = `control-${Date.now()}`;
-    const otp = Math.floor(1000 + Math.random() * 9000);
-    const data = `
-   <?xml version="1.0" encoding="UTF-8"?>
-<request>
-  <head>
-    <operation>submit</operation>
-    <login>gammanet</login>
-    <password>G!.23Ea</password>
-    <controlid>123-abcdeddd</controlid>
-    <title>GAMMANET</title>
-    <bulkmessage>Fuadddcik</bulkmessage>
-    <scheduled>NOW</scheduled>
-    <isbulk>true</isbulk>
-  </head>
-  <body>
-    <msisdn>994558080801</msisdn>
-  </body>
-</request>
-    `;
-
-    setOtpCode(otp);
-    await axios.post(url, data, {
-      headers: {
-        'Content-Type': 'application/xml',
-      },
-    });
-      console.log("OTP  gönderildi:", otp);
+  //AXIOS ILE OTP ISTEYI HELEKI SAXLADIQ
+  // const sendOtp = async (phoneNumber) => {
+  //   const url = "/api/sms"; // Proxy ile yönlendirme yapılan endpoint
+  //   const controlId = `control-${Date.now()}`;
+  //   const otp = Math.floor(1000 + Math.random() * 9000);
   
-    
-  };
+  //   // XML məlumatları
+  //   const xmlData = `
+  //     <request>
+  //         <head>
+  //             <operation>submit</operation>
+  //             <login>gammanet</login>
+  //             <password>G!.23Ea</password>
+  //             <controlid>${controlId}</controlid>
+  //             <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
+  //             <title>GAMMANET</title>
+  //             <scheduled>NOW</scheduled>
+  //             <isbulk>false</isbulk>
+  //         </head>
+  //         <body>
+  //             <msisdn>${phoneNumber}</msisdn>
+  //             <message>Your OTP code is ${otp}</message>
+  //         </body>
+  //     </request>
+  //   `;
+  
+  //   try {
+  //     // Artık proxy üzerinden yönlendirme yapılacak
+  //     const response = await axios.post(url, xmlData, {
+  //       headers: {
+  //         "Content-Type": "application/xml",
+  //         Accept: "application/xml",
+  //       },
+  //     });
+  
+  //     console.log("XML cavabı:", response.data);
+  //     setOtpCode(otp.toString());
+  //   } catch (error) {
+  //     console.error("XML istəyi uğursuz oldu:", error);
+  
+  //     // Alternatif JSON isteği
+  //     const jsonData = {
+  //       msisdn: phoneNumber,
+  //       message: `Your OTP code is ${otp}`,
+  //       controlid: controlId,
+  //       login: "gammanet",
+  //       password: "G!.23Ea",
+  //       title: "GAMMANET",
+  //       scheduled: "NOW",
+  //       isbulk: false,
+  //     };
+  
+  //     try {
+  //       const response = await axios.post(url, jsonData, {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Accept: "application/json",
+  //         },
+  //       });
+  
+  //       console.log("JSON cavabı:", response.data);
+  //       setOtpCode(otp.toString());
+  //     } catch (error) {
+  //       console.error("uğursuz oldu:", error);
+  //     }
+  //   }
+  // };
+  
 
-  // OTP gonderildikde sonra checkbox ve ödeme aktif edilir
   const handleOtpSubmit = async (enteredOtp) => {
     if (enteredOtp === otpCode.toString()) {
       setIsCheckboxDisabled(false);
       setIsPaymentEnabled(true);
       toggleOtpPopup();
+      setError(null); // Xəta təmizlənir
     } else {
-      setError("Yanlış OTP kodu.");
+      setError("Səhv OTP kodu.");
     }
   };
 
-  // Paket seçimini yönetir
   const handleCheckboxChange = (e) => {
     const clickedPackage = e.target.value;
     if (selectedPackage.includes(clickedPackage)) {
-      setSelectedPackage(
-        selectedPackage.filter((pkg) => pkg !== clickedPackage)
-      );
+      setSelectedPackage(selectedPackage.filter((pkg) => pkg !== clickedPackage));
     } else {
       setSelectedPackage([...selectedPackage, clickedPackage]);
     }
   };
 
-  // Ödeme işlemini yönetir
   const handlePayment = () => {
     if (selectedPackage.length === 0) {
       console.log("Zəhmət olmasa, minimum 1 paket seçin.");
       return;
     }
-    console.log("Ödeme yapılıyor:", { selectedPackage, price });
+    console.log("Ödəniş həyata keçirilir:", { selectedPackage, price });
   };
 
-  // Seçili paketlerin fiyatını hesaplar
   useEffect(() => {
     let total = 0;
     selectedPackage.forEach((pkg) => {
@@ -125,52 +156,46 @@ const Page = () => {
 
   return (
     <div className="container mx-auto p-5 md:p-20">
-      {/* OTP Popup Bileşeni */}
       <PopupExample
         isVisible={otpVisible}
         togglePopup={toggleOtpPopup}
         onSubmit={handleOtpSubmit}
       />
 
-      {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col items-center justify-start p-5 md:p-24 text-black shadow-2xl border border-gray-400 rounded-xl">
-          <div className="flex justify-center items-center">
-            <h1 className="font-bold text-center md:text-3xl mb-5 md:mb-10">
-              Şəxsi məlumatlarını qeyd et
-            </h1>
-          </div>
-
-          {/* Ad alanı */}
+          <h1 className="font-bold text-center md:text-3xl mb-5 md:mb-10">
+            Şəxsi məlumatlarını qeyd et
+          </h1>
           <input
             type="text"
             placeholder="Ad"
-            className={`input input-bordered w-full md:w-[300px] border-gray-400 bg-gray-100 mb-2 ${errors.name ? "border-red-500" : ""
-              }`}
+            className={`input input-bordered w-full md:w-[300px] border-gray-400 bg-gray-100 mb-2 ${
+              errors.name ? "border-red-500" : ""
+            }`}
             {...register("name", {
               required: "Ad sahəsi boş ola bilməz",
-              minLength: { value: 2, message: "Ad ən az 2 hərf olmalıdır" },
+              minLength: { value: 3, message: "Ad ən az 3 hərf olmalıdır" },
+              validate: (value) => {
+                return /^[A-Za-zƏəÇçĞğİıÖöŞşÜü\s]+$/.test(value) || "Ad yalnız hərflərdən ibarət olmalıdır";
+              }
             })}
           />
-          {errors.name && (
-            <span className="text-red-500">{errors.name.message}</span>
-          )}
-
-          {/* Soyad alanı */}
+          {errors.name && <span className="text-red-500">{errors.name.message}</span>}
           <input
             type="text"
             placeholder="Soyad"
             className="input input-bordered w-full md:w-[300px] border-gray-400 bg-gray-100 mb-2"
             {...register("surname", {
               required: "Soyad sahəsi boş ola bilməz",
-              minLength: { value: 2, message: "Soyad ən az 2 hərf olmalıdır" },
+              minLength: { value: 3, message: "Soyad ən az 3 hərf olmalıdır" },
+              validate: (value) => {
+                return /^[A-Za-zƏəÇçĞğİıÖöŞşÜü\s]+$/.test(value) || "Soyad yalnız hərflərdən ibarət olmalıdır";
+              }
+
             })}
           />
-          {errors.surname && (
-            <span className="text-red-500">{errors.surname.message}</span>
-          )}
-
-          {/* Telefon Numarası */}
+          {errors.surname && <span className="text-red-500">{errors.surname.message}</span>}
           <div className="flex items-center mb-2">
             <select
               className="input input-bordered w-[100px] border-gray-400 bg-gray-100 mr-2"
@@ -180,12 +205,15 @@ const Page = () => {
               <option value="" disabled hidden>
                 --
               </option>
-              <option value="099">099</option>
-              <option value="055">055</option>
-              <option value="051">051</option>
-              <option value="050">050</option>
-              <option value="070">070</option>
-              <option value="077">077</option>
+              <option value="99">099</option>
+              <option value="55">055</option>
+              <option value="51">051</option>
+              <option value="50">050</option>
+              <option value="10">010</option>
+              <option value="70">070</option>
+              <option value="77">077</option>
+              <option value="66">066</option>
+              
             </select>
             <input
               type="text"
@@ -196,54 +224,46 @@ const Page = () => {
                 minLength: { value: 7, message: "Telefon nömrəsi 7 rəqəm olmalıdır" },
                 maxLength: { value: 7, message: "Telefon nömrəsi 7 rəqəm olmalıdır" },
                 pattern: { value: /^[0-9]+$/, message: "Telefon nömrəsi yalnız rəqəmlərdən ibarət olmalıdır" },
+                validate: value => value[0] !== '0' || "Telefon nömrəsi 0 ilə başlamamalıdır"
               })}
             />
           </div>
-          {errors.phoneNumber && (
-            <span className="text-red-500">{errors.phoneNumber.message}</span>
-          )}
-
-          {/* Təsdiq Et Butonu */}
+          {errors.phoneNumber && <span className="text-red-500">{errors.phoneNumber.message}</span>}
           <button
             type="submit"
             className="bg-blue-200 text-blue-500 p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all"
           >
             Təsdiq et
           </button>
-
           {error && <p className="text-red-500 mt-4">{error}</p>}
-
-          {/* Paket Seçimi */}
+          {otpSent && <p className="text-green-500 mt-4">OTP kodu göndərildi!</p>} 
           <div className="flex justify-center items-center mt-8 md:mt-12">
             <h1 className="font-bold text-center md:text-3xl">Tarif paketini seç</h1>
           </div>
           <div className="flex flex-col justify-center items-center gap-4 mt-5">
             {["3azn", "5azn", "10azn"].map((pkg) => (
-              <div
-                key={pkg}
-                className="w-full md:w-[400px] p-3 flex gap-2 items-center justify-around border-2 border-gray-400 rounded-md"
-              >
+              <div key={pkg} className="flex items-center gap-2">
                 <input
                   type="checkbox"
+                  id={pkg}
                   value={pkg}
+                  disabled={isCheckboxDisabled}
                   onChange={handleCheckboxChange}
-                  disabled={!isPaymentEnabled} // Ödeme butonu aktifse checkbox'lar aktif
+                  className="form-checkbox h-5 w-5 text-blue-600"
                 />
-                <label className="text-xl">{pkg}</label>
+                <label htmlFor={pkg} className="text-lg">{`${pkg} AZN`}</label>
               </div>
             ))}
-          </div>
-
-          {/* Ödeme Butonu */}
-          <button
-            type="button"
-            onClick={handlePayment}
-            className={`bg-green-300 text-white p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all mt-8 ${isCheckboxDisabled ? "cursor-not-allowed opacity-50" : ""
+            <button
+              className={`bg-green-200 text-green-500 p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ${
+                !isPaymentEnabled && "opacity-50 cursor-not-allowed"
               }`}
-            disabled={isCheckboxDisabled}
-          >
-            Ödə
-          </button>
+              onClick={handlePayment}
+              disabled={!isPaymentEnabled}
+            >
+              Ödəniş et (Cəmi: {price} AZN)
+            </button>
+          </div>
         </div>
       </form>
     </div>
