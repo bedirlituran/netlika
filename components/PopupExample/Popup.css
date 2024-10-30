@@ -27,3 +27,12 @@
     gap: 40px;
   }
   
+
+  .captcha-highlight {
+    background-color: rgba(255, 215, 0, 0.3); /* Daha şeffaf sarı */
+    padding: 0.25rem;
+    border-radius: 4px;
+    font-weight: 300; /* Daha ince bir font ağırlığı */
+    color: rgba(0, 0, 0, 0.7); /* Daha soluk siyah renk */
+    filter: blur(0.8px);
+  }

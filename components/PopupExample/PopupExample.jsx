@@ -3,39 +3,32 @@ import "./Popup.css";
 import Image from "next/image";
 import { MdClose } from "react-icons/md";
 
-export default function PopupExample({ isVisible, togglePopup }) {
+export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
   if (!isVisible) return null;
 
   const otpInputs = useRef([]);
   const [captchaCode, setCaptchaCode] = useState("");
   const [isCaptchaValid, setIsCaptchaValid] = useState(true);
-  const [randomCaptcha, setRandomCaptcha] = useState(""); // Rastgele captcha için state
+  const [randomCaptcha, setRandomCaptcha] = useState("");
 
-  // Komponent ilk yüklendiğinde rastgele captcha oluştur
   useEffect(() => {
     const generateCaptcha = () => {
-      const captcha = Math.floor(1000 + Math.random() * 9000).toString(); // 1000 ile 9999 arasında rastgele sayı
+      const captcha = Math.floor(1000 + Math.random() * 9000).toString();
       setRandomCaptcha(captcha);
     };
     generateCaptcha();
   }, []);
 
   const handleInputFocus = (index) => {
-    if (otpInputs.current[index]) {
-      otpInputs.current[index].focus(); // Current input üzerine odaklan
-    }
+    otpInputs.current[index]?.focus();
   };
 
   const handleChange = (index, e) => {
     const { value } = e.target;
 
-    // Eğer mevcut giriş doluysa bir sonraki girişe geç
     if (value.length === 1 && index < otpInputs.current.length - 1) {
       otpInputs.current[index + 1].focus();
-    }
-
-    // Eğer mevcut giriş boşsa bir önceki girişe geç
-    if (value.length === 0 && index > 0) {
+    } else if (value.length === 0 && index > 0) {
       otpInputs.current[index - 1].focus();
     }
   };
@@ -43,22 +36,28 @@ export default function PopupExample({ isVisible, togglePopup }) {
   const handleCaptchaChange = (e) => {
     const { value } = e.target;
     setCaptchaCode(value);
-    setIsCaptchaValid(value === randomCaptcha); // Rastgele captcha kontrolü
+    setIsCaptchaValid(value === randomCaptcha);
   };
 
-  // Popup'ı kapatma ve giriş alanlarını sıfırlama fonksiyonu
   const closePopup = () => {
- 
     setCaptchaCode("");
     setIsCaptchaValid(true);
-    otpInputs.current.forEach(input => {
-      if (input) {
-        input.value = ""; // Tüm giriş alanlarını temizle
-      }
-    });
-    // Burayı kaldırdık
+    otpInputs.current.forEach(input => input.value = "");
     togglePopup();
-    console.log("baglandida ala")
+  };
+
+  const handleSubmit = () => {
+    const temp = otpInputs.current[0].value + otpInputs.current[1].value + otpInputs.current[2].value + otpInputs.current[3].value;
+
+    console.log(temp)
+    console.log( otpTesdiq);
+    if (isCaptchaValid && temp == otpTesdiq) {
+      console.log( otpTesdiq);
+
+      console.log("OTP doğrulandı"); // Örnek olarak bir log.
+    togglePopup();
+
+    }
   };
 
   return (
@@ -77,7 +76,7 @@ export default function PopupExample({ isVisible, togglePopup }) {
           color="black" 
           size={32} 
           className="bg-yellow-200 cursor-pointer rounded-lg absolute top-2 right-2" 
-          onClick={closePopup} // Yeni fonksiyonu burada çağırıyoruz
+          onClick={closePopup}
         />
 
         <h2 className="text-xl font-semibold font-serif mt-8">OTP kodu daxil edin</h2>
@@ -96,7 +95,7 @@ export default function PopupExample({ isVisible, togglePopup }) {
         </div>
         
         <div className="mt-4">
-          <label className="text-lg">Robot olmadığını təsdiqlə : {randomCaptcha}</label> {/* Rastgele captcha gösteriliyor */}
+          <label className="text-lg">Robot olmadığını təsdiqlə : <span className="captcha-highlight">{randomCaptcha}</span></label>
           <input
             type="text"
             maxLength="4"
@@ -108,7 +107,7 @@ export default function PopupExample({ isVisible, togglePopup }) {
         </div>
 
         <button
-          onClick={togglePopup} // Bu buton hala togglePopup'ı çağırıyor
+          onClick={handleSubmit} // Doğrulama işlemi için ayrı bir fonksiyon
           className="bg-blue-200 text-blue-500 font-bold text-xl p-4 rounded-2xl shadow-lg hover:opacity-80 transition-all"
           disabled={!isCaptchaValid}
         >

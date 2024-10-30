@@ -14,6 +14,7 @@ const Page = () => {
   const [otpCode, setOtpCode] = useState("");
   const [error, setError] = useState(null);
   const [otpSent, setOtpSent] = useState(false);
+  const [otpTesdiq, setOtpTesdiq] = useState("");
 
   const toggleOtpPopup = () => {
     setOtpVisible((prev) => !prev);
@@ -42,8 +43,8 @@ const Page = () => {
     const url = "/api/sms"; // Proxy ile yönlendirme yapılan endpoint
     const controlId = `control-${Date.now()}`;
     const otp = Math.floor(1000 + Math.random() * 9000);
-
-    // XML məlumatları
+    setOtpTesdiq(otp);
+  
     const xmlData = `
       <request>
           <head>
@@ -159,6 +160,7 @@ const Page = () => {
     <div className="container mx-auto p-5 md:p-20">
       <PopupExample
         isVisible={otpVisible}
+        otpTesdiq={otpTesdiq}
         togglePopup={toggleOtpPopup}
         onSubmit={handleOtpSubmit}
       />
