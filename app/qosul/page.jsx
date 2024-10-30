@@ -293,7 +293,7 @@ const Page = () => {
     <label htmlFor={pkg.name} className="flex-1 text-lg ml-3 text-gray-800">
       {pkg.name}
     </label>
-    <span className="text-lg font-semibold bg-yellow-200 text-gray-800 px-2 py-1 rounded">
+    <span className="text-lg font-semibold text-gray-800 px-2 py-1 rounded" style={{ background: '#ffff00' }}>
       {`${pkg.price} AZN`}
     </span>
   </div>
