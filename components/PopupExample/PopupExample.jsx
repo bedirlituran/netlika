@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Popup.css";
 import Image from "next/image";
 
@@ -6,6 +6,8 @@ export default function PopupExample({ isVisible, togglePopup }) {
   if (!isVisible) return null;
 
   const otpInputs = useRef([]);
+  const [captchaCode, setCaptchaCode] = useState("");
+  const [isCaptchaValid, setIsCaptchaValid] = useState(true);
 
   const handleInputFocus = (index) => {
     if (otpInputs.current[index]) {
@@ -27,6 +29,12 @@ export default function PopupExample({ isVisible, togglePopup }) {
     }
   };
 
+  const handleCaptchaChange = (e) => {
+    const { value } = e.target;
+    setCaptchaCode(value);
+    setIsCaptchaValid(value === "1234"); // Örnek olarak, doğru captcha "1234"
+  };
+
   return (
     <div className="popup">
       <div className="popup-content">
@@ -37,7 +45,7 @@ export default function PopupExample({ isVisible, togglePopup }) {
           alt="Gammanet.az"
           priority
           className="cursor-pointer bg-transparent rounded-md transition-all"
-          style={{ background: "#ffff00",width:"120px",height:"80px" }}
+          style={{ background: "#ffff00", width: "120px", height: "80px" }}
         />
         <h2 className="text-xl font-semibold font-serif mt-8">OTP kodu daxil edin</h2>
         <div className="flex flex-row gap-4 items-center justify-center">
@@ -53,9 +61,22 @@ export default function PopupExample({ isVisible, togglePopup }) {
             />
           ))}
         </div>
+        
+        <div className="mt-4">
+          <label className="text-lg">Captcha: 1234</label>
+          <input
+            type="text"
+            maxLength="4"
+            className={`mt-2 w-full border ${isCaptchaValid ? "border-gray-400" : "border-red-500"} rounded-md p-2`}
+            onChange={handleCaptchaChange}
+          />
+          {!isCaptchaValid && <span className="text-red-500">Captcha yanlışdır.</span>}
+        </div>
+
         <button
           onClick={togglePopup}
           className="bg-blue-200 text-blue-500 font-bold text-xl p-4 rounded-2xl shadow-lg hover:opacity-80 transition-all"
+          disabled={!isCaptchaValid}
         >
           Təsdiq et
         </button>
