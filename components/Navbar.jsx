@@ -1,117 +1,268 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaHome, FaHandsHelping } from "react-icons/fa";
+import { useState } from "react";
+import { FaHome } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
+import { FaHandsHelping } from "react-icons/fa";
 import { HiPhone } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { PiTelevisionFill } from "react-icons/pi";
 import { SiPicartodottv } from "react-icons/si";
 import { MdCastConnected } from "react-icons/md";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
+
+
+const Navbar = () => {
+  const [isClick, setisClick] = useState(false);
   const toggleNavbar = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setisClick(!isClick);
   };
 
-  const handleRedirect = (type) => {
-    if (type === "phone") window.location.href = "tel:+994123104888";
-    else if (type === "email") window.location.href = "mailto:gamma_net@mail.ru";
+  const handleSelectChange = (e) => {
+    const selectedOption = e.target.value;
+
+    if (selectedOption === "phone") {
+      handlePhoneClick();
+    } else if (selectedOption === "email") {
+      handleEmailClick();
+    }
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = "tel:+994123104888"; // Telefon uygulamasını başlatır
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:gamma_net@mail.ru"; // E-posta uygulamasını başlatır
   };
 
   return (
-    <div className="font-sans flex items-center justify-between px-2 w-full h-20 sticky top-0 z-50 border-gray-300 text-blue-950" style={{ background: '#ffff00' }}>
-      <nav className="flex justify-between items-center p-3 w-full">
-        <Link href="/">
-          <Image src="/image/logo2.webp" width={120} height={40} alt="Gammanet.az" priority className="cursor-pointer bg-transparent rounded-md" />
-        </Link>
-
-        {/* Desktop Links */}
-        <div className="hidden lg:flex lg:items-center lg:justify-center">
-          <ul className="flex items-center text-blue-950 lg:gap-8">
-            {[
-              { href: "/", label: "Ana Səhifə", icon: <FaHome /> },
-              { href: "/haqqimizda", label: "Haqqımızda", icon: <BsPersonCircle /> },
-              { href: "/qosul", label: "Qoşul", icon: <MdCastConnected /> },
-              { href: "/xidmetler", label: "Xidmətlər", icon: <FaHandsHelping /> },
-              { href: "/channelList", label: "Kanal Listi", icon: <PiTelevisionFill /> },
-              { href: "/tmsplayer", label: "IP tv", icon: <SiPicartodottv /> },
-              { href: "/elaqe2", label: "Əlaqə", icon: <HiPhone /> },
-            ].map((item, index) => (
-              <li key={Item.id || index} className="flex gap-2 items-center">
-                {item.icon}
-                <Link href={item.href} className="text-black hover:text-blue-500 hover:border-b border-blue-500 transition-all duration-500">
-                  {item.label}
+      <div className="font-sans file:flex items-center justify-between px-2 transition-colors duration-500 w-full h-20 sticky top-0 z-50 border-gray-300 text-blue-950" style={{ background: '#ffff00' }}>
+        <nav className="flex justify-between items-center font-medium lg:flex lg:justify-between lg:items-center p-3 min-w-full">
+          <Link href="/">
+          <Image
+        src="/image/logo2.webp"
+        width={120} // Resmin genişliği
+        height={40} // Resmin yüksekliği
+        alt="Gammanet.az"
+        priority
+        className="cursor-pointer bg-transparent rounded-md transition-all"
+        style={{ background: '#ffff00' }}
+      />
+          </Link>
+          <div className="hidden lg:flex lg:items-center lg:justify-center">
+            <ul className="flex items-center text-blue-950 text lg:text-normal lg:flex lg:items-center lg:justify-between   lg:gap-8 ">
+              <li className="flex gap-2 items-center">
+                <FaHome size={20} />
+                <Link
+                  href="/"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Ana Səhifə
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
+              <li className="flex items-center gap-2">
+                <BsPersonCircle size={20} />
 
-        {/* Online Payment Link */}
-        <div className="hidden lg:block">
-          <Link href="https://short.fpay.az/gammanet" target="_blank" className="p-2 rounded-2xl text-black border border-black hover:bg-yellow-500 transition-all duration-500">
-            Online Ödə
-          </Link>
-        </div>
+                <Link
+                  href="/haqqimizda"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Haqqımızda
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <MdCastConnected size={20} />
+              <Link
+                  href="/qosul"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Qoşul
+                </Link>
+              </li>
+              <li className="flex gap-2 items-center">
+                <FaHandsHelping size={20} />
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center">
-          <button onClick={toggleNavbar} className="inline-flex items-center justify-center p-2 rounded-md text-white transition-all duration-500 focus:outline-none">
-            {isMenuOpen ? (
-              <svg className="h-10 w-10 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="h-10 w-10 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </nav>
+                <Link
+                  href="/xidmetler"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Xidmətlər
+                </Link>
 
-      {/* Mobile Dropdown Menu */}
-      {isMenuOpen && (
-        <motion.div
-          className="absolute lg:hidden z-50 top-18 left-0 right-0 h-auto p-4 w-full bg-yellow-400 transition-transform duration-1000"
-          initial={{ opacity: 0, x: "100%" }}
-          animate={{ opacity: 1, x: "0%" }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3">
-            <ul className="space-y-6 font-bold flex flex-col items-center border border-red-200 rounded-2xl p-4">
-              {[
-                { href: "/", label: "Ana Səhifə", icon: <FaHome /> },
-                { href: "/haqqimizda", label: "Haqqımızda", icon: <BsPersonCircle /> },
-                { href: "/qosul", label: "Qoşul", icon: <MdCastConnected /> },
-                { href: "/xidmetler", label: "Xidmətlər", icon: <FaHandsHelping /> },
-                { href: "/channelList", label: "Kanal Listi", icon: <PiTelevisionFill /> },
-                { href: "/tmsplayer", label: "IP tv", icon: <SiPicartodottv /> },
-              ].map((item, i) => (
-                <li key={i} className="flex gap-2">
-                  {item.icon}
-                  <Link href={item.href} className="text-black hover:text-blue-500 border-black tracking-wider transition-all duration-500">
-                    {item.label}
+              </li>
+
+              <li className="flex gap-2 items-center">
+              <PiTelevisionFill size={20} />
+
+                <Link
+                  href="/channelList"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Kanal Listi
+                </Link>
+
+              </li>
+
+
+              <li className="flex gap-2 items-center">
+              <SiPicartodottv size={20} />
+
+
+                <Link
+                  href="/tmsplayer"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                 IP tv
+                </Link>
+
+              </li>
+
+
+
+
+
+
+              <li className="flex gap-2 items-center">
+                <HiPhone size={20} />
+                <Link
+                  href='/elaqe2' className="text-black hover:text-blue-500  hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+
+                  Əlaqə
+                </Link>
+
+              </li>
+
+            </ul>
+          </div>
+
+          <div className="  items-center   text-black hidden lg:block">
+            <Link
+              href="https://short.fpay.az/gammanet"
+              target="blank"
+              className="p-2 rounded-2xl text-black border border-black hover:bg-yellow-500 transition-all duration-500" >
+              Online Ödə
+            </Link>
+          </div>
+          <div className="lg:hidden flex items-center ">
+            <button
+              className="inline-flex items-center justify-center p-2 rounded-md text-white  hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus-within:ring-white transition-all duration-500"
+              onClick={toggleNavbar}>
+              {isClick ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 transition-all duration-500  "
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 transition-all duration-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="red">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+               
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
+        </nav>
+        {isClick && (
+          <motion.div
+            className="absolute lg:hidden z-50 top-18 left-0 right-0  h-auto p-4  w-full translate-x-0 transition-translate duration-1000" style={{ 'background': 'yellow' }}
+            initial={{ opacity: 0, transform: "translateX(100%)" }}
+            animate={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 0.5 }}>
+            <div className=" px-2 pt-2 pb-3 space-y-3 sm:px-3 top-18  ">
+              <ul className="space-y-6 font-bold  flex flex-col items-center text-start justify-center border border-red-200 rounded-2xl p-4">
+                <li className="flex gap-2">
+                  <FaHome size={20} />
+                  <Link
+                    href="/"
+                    className="text-black hover:text-blue-500 border-black tracking-wider transition-all duration-500">
+                    Ana Səhifə
                   </Link>
                 </li>
-              ))}
-            </ul>
-            <div className="space-y-6 font-bold flex flex-col items-center border p-4 border-red-200 rounded-2xl">
-              <button onClick={() => handleRedirect("phone")} className="flex gap-2 items-center text-black hover:text-blue-500 tracking-wider">
-                <HiPhone size={20} /> Əlaqə
-              </button>
-              <Link href="https://short.fpay.az/gammanet" target="_blank" className="p-2 text-black hover:bg-yellow-500 transition-all duration-500 border border-red-200 rounded-2xl">
-                Online Ödə
-              </Link>
+                <li className="flex gap-2">
+               <BsPersonCircle size={20} />
+                  <Link
+                    href="/haqqimizda"
+                    className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
+                    Haqqımızda
+                  </Link>
+                </li>
+                <li className="flex gap-2">
+                <MdCastConnected size={20} />
+                  <Link
+                    href="/qosul"
+                    className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
+                    Qoşul
+                  </Link>
+                </li>
+                <li className="flex gap-2">
+                  <FaHandsHelping size={20} />
+                  <Link
+                    href="/xidmetler"
+                    className="text-black hover:text-blue-500 tracking-wider transition-all duration-500">
+                    Xidmətlər
+                  </Link>
+                </li>
+                <li className="flex gap-2">
+              <PiTelevisionFill size={20} />
+
+                <Link
+                  href="/channelList"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                  Kanal Listi
+                </Link>
+
+              </li>
+              <li className="flex gap-2 ">
+              <SiPicartodottv size={20} />
+
+
+            <Link
+                  href="/tmsplayer"
+                  className="text-black hover:text-blue-500 hover:border-b border-blue-500 tracking-wider transition-all duration-500">
+                 IP tv
+                </Link>
+
+              </li>
+              </ul>
+              <ul className="space-y-6 font-bold  flex flex-col items-center text-start justify-center border p-4  border-red-200 rounded-2xl">
+                <li className="flex flex-row gap-2 items-center bg-transparent">
+                <HiPhone size={20} />
+                <Link
+                  href='/elaqe2' className="text-black hover:text-blue-500 border-blue-500 tracking-wider transition-all duration-500">
+
+                  Əlaqə
+                </Link>
+                </li>
+                <li className="flex  items-center  text-blue-950">
+                <Link
+              href="https://short.fpay.az/gammanet"
+              target="blank"
+              className="p-2  text-black   hover:bg-yellow-500 transition-all duration-500 border border-red-200 rounded-2xl" >
+              Online Ödə
+            </Link>
+                </li>
+              </ul>
             </div>
-          </div>
-        </motion.div>
-      )}
-    </div>
+          </motion.div>
+        )}
+      </div>
   );
 };
 
