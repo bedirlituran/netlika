@@ -1,7 +1,6 @@
 "use client";
-import { useState} from "react";
+import React,{ useState} from "react";
 import Card2 from "./cards/Card2";
-import React from "react";
 import Card3 from "./cards/Card3";
 import Card4 from "./cards/Card4";
 import { TiArrowLeftOutline, TiArrowRightOutline } from "react-icons/ti";

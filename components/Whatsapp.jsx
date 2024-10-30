@@ -1,8 +1,7 @@
 // pages/index.js veya istediğiniz sayfanın dosyası
 
 "use client"
-import React from 'react';
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
@@ -14,28 +13,12 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className='font-custom hover:bg-green-500 hover:text-white hover:shadow-2xl hover:scale-110 transition-all duration-500 z-50'
-      style={{
-        textAlign: 'center',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '70px',
-        height: '70px',
-        position: 'fixed',
-        bottom: 30,
-        right: 30,
-        background: '#25D366',
-        color: '#fff',
-        padding: '10px 20px',
-        borderRadius: '50%',
-        cursor: 'pointer',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
-      }}
-      onClick={openWhatsApp}
-    >
-      <FaWhatsapp size={70} />
-    </div>
+    <div 
+    className="font-custom text-center p-5 rounded-full text-white fixed bottom-7 right-7 flex w-[70px] h-[70px] items-center justify-center cursor-pointer hover:bg-green-500 hover:shadow-2xl hover:scale-110 transition-all duration-500 z-50"
+    onClick={openWhatsApp}>
+    <FaWhatsapp size={70} />
+  </div>
+  
   );
 };
 

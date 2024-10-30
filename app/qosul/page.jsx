@@ -17,7 +17,6 @@ const Page = () => {
 
   const toggleOtpPopup = () => {
     setOtpVisible((prev) => !prev);
-    console.log("otp tesdiq edildi");
   };
 
   const {
@@ -45,24 +44,24 @@ const Page = () => {
     const otp = Math.floor(1000 + Math.random() * 9000);
 
     // XML məlumatları
-    const xmlData = `
-      <request>
-          <head>
-              <operation>submit</operation>
-              <login>gammanet</login>
-              <password>G!.23Ea</password>
-              <controlid>${controlId}</controlid>
-              <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
-              <title>GAMMANET</title>
-              <scheduled>NOW</scheduled>
-              <isbulk>false</isbulk>
-          </head>
-          <body>
-              <msisdn>${phoneNumber}</msisdn>
-              <message>Your OTP code is ${otp}</message>
-          </body>
-      </request>
-    `;
+    // const xmlData = `
+    //   <request>
+    //       <head>
+    //           <operation>submit</operation>
+    //           <login>gammanet</login>
+    //           <password>G!.23Ea</password>
+    //           <controlid>${controlId}</controlid>
+    //           <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
+    //           <title>GAMMANET</title>
+    //           <scheduled>NOW</scheduled>
+    //           <isbulk>false</isbulk>
+    //       </head>
+    //       <body>
+    //           <msisdn>${phoneNumber}</msisdn>
+    //           <message>Your OTP code is ${otp}</message>
+    //       </body>
+    //   </request>
+    // `;
 
     try {
       // Artık proxy üzerinden yönlendirme yapılacak
@@ -280,7 +279,7 @@ const Page = () => {
 ].map((pkg) => (
   <div
     key={pkg.name}
-    className="input input-bordered w-full md:w-[300px] flex items-center justify-between border border-gray-300 bg-white rounded-lg shadow-md p-3 mb-3"
+    className="input input-bordered w-full  md:w-[300px] flex items-center justify-between border border-gray-300 bg-white rounded-lg shadow-md p-7 mb-3"
   >
     <input
       type="checkbox"

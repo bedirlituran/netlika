@@ -1,4 +1,3 @@
-import _default from "next/dist/shared/lib/runtime-config.external";
 
 const Header = () => {
   return (

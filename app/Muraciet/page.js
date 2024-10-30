@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import { NextSeo } from 'next-seo';
+import Link from "next/link"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -128,9 +129,9 @@ export default function Example() {
             </div>
             <Switch.Label className="text-sm leading-6 text-gray-600">
               By selecting this, you agree to our{' '}
-              <a href="#" className="font-semibold text-indigo-600">
+              <Link href="#" className="font-semibold text-indigo-600">
                 privacy&nbsp;policy
-              </a>
+              </Link>
               .
             </Switch.Label>
           </Switch.Group>
