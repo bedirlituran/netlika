@@ -44,24 +44,24 @@ const Page = () => {
     const otp = Math.floor(1000 + Math.random() * 9000);
 
     // XML məlumatları
-    // const xmlData = `
-    //   <request>
-    //       <head>
-    //           <operation>submit</operation>
-    //           <login>gammanet</login>
-    //           <password>G!.23Ea</password>
-    //           <controlid>${controlId}</controlid>
-    //           <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
-    //           <title>GAMMANET</title>
-    //           <scheduled>NOW</scheduled>
-    //           <isbulk>false</isbulk>
-    //       </head>
-    //       <body>
-    //           <msisdn>${phoneNumber}</msisdn>
-    //           <message>Your OTP code is ${otp}</message>
-    //       </body>
-    //   </request>
-    // `;
+    const xmlData = `
+      <request>
+          <head>
+              <operation>submit</operation>
+              <login>gammanet</login>
+              <password>G!.23Ea</password>
+              <controlid>${controlId}</controlid>
+              <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
+              <title>GAMMANET</title>
+              <scheduled>NOW</scheduled>
+              <isbulk>false</isbulk>
+          </head>
+          <body>
+              <msisdn>${phoneNumber}</msisdn>
+              <message>Your OTP code is ${otp}</message>
+          </body>
+      </request>
+    `;
 
     try {
       // Artık proxy üzerinden yönlendirme yapılacak
