@@ -9,7 +9,7 @@ export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
 
   const otpInputs = useRef([]);
   const [captchaCode, setCaptchaCode] = useState("");
-  const [isCaptchaValid, setIsCaptchaValid] = useState(true);
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
   const [randomCaptcha, setRandomCaptcha] = useState("");
 
   useEffect(() => {
@@ -50,8 +50,6 @@ export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
   const handleSubmit = () => {
     const temp = otpInputs.current[0].value + otpInputs.current[1].value + otpInputs.current[2].value + otpInputs.current[3].value;
 
-    console.log(temp)
-    console.log( otpTesdiq);
     if (isCaptchaValid && temp == otpTesdiq) {
       console.log( otpTesdiq);
 
@@ -104,7 +102,7 @@ export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
             onChange={handleCaptchaChange}
             placeholder="Ekrandakı kodu daxil et"
           />
-          {!isCaptchaValid && <span className="text-red-500">Kod yanlışdır.</span>}
+          {!isCaptchaValid && isCaptchaValid =="" && <span className="text-red-500">Kod yanlışdır.</span>}
         </div>
 
         <button
