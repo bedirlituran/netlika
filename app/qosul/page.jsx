@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./page.css";
@@ -7,8 +7,8 @@ import PopupExample from "@/components/PopupExample/PopupExample";
 
 const Page = () => {
   const [otpVisible, setOtpVisible] = useState(false);
-  const [isCheckboxDisabled, setIsCheckboxDisabled] = useState(true);
-  const [isPaymentEnabled, setIsPaymentEnabled] = useState(false);
+  const [isCheckboxDisabled, setIsCheckboxDisabled] = useState(true); // chek box aktiv ve deaktiv
+  const [isPaymentEnabled, setIsPaymentEnabled] = useState(false); // odenis aktiv ve deaktiv
   const [selectedPackage, setSelectedPackage] = useState([]);
   const [price, setPrice] = useState(0);
   const [otpCode, setOtpCode] = useState("");
@@ -32,6 +32,8 @@ const Page = () => {
 
       await sendOtp(formattedPhoneNumber);
       setOtpSent(true);
+      setIsCheckboxDisabled(false);
+      setIsPaymentEnabled(true);
       toggleOtpPopup();
     } catch (error) {
       setError("OTP göndərmə xətası. Zəhmət olmasa, yenidən cəhd edin.");
@@ -44,25 +46,25 @@ const Page = () => {
     const controlId = `control-${Date.now()}`;
     const otp = Math.floor(1000 + Math.random() * 9000);
     setOtpTesdiq(otp);
-  
-    const xmlData = `
-      <request>
-          <head>
-              <operation>submit</operation>
-              <login>gammanet</login>
-              <password>G!.23Ea</password>
-              <controlid>${controlId}</controlid>
-              <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
-              <title>GAMMANET</title>
-              <scheduled>NOW</scheduled>
-              <isbulk>false</isbulk>
-          </head>
-          <body>
-              <msisdn>${phoneNumber}</msisdn>
-              <message>Your OTP code is ${otp}</message>
-          </body>
-      </request>
-    `;
+
+    // const xmlData = `
+    //   <request>
+    //       <head>
+    //           <operation>submit</operation>
+    //           <login>gammanet</login>
+    //           <password>G!.23Ea</password>
+    //           <controlid>${controlId}</controlid>
+    //           <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
+    //           <title>GAMMANET</title>
+    //           <scheduled>NOW</scheduled>
+    //           <isbulk>false</isbulk>
+    //       </head>
+    //       <body>
+    //           <msisdn>${phoneNumber}</msisdn>
+    //           <message>Your OTP code is ${otp}</message>
+    //       </body>
+    //   </request>
+    // `;
 
     try {
       // Artık proxy üzerinden yönlendirme yapılacak
@@ -117,17 +119,6 @@ const Page = () => {
     }
   };
 
-  const handleCheckboxChange = (e) => {
-    const clickedPackage = e.target.value;
-    if (selectedPackage.includes(clickedPackage)) {
-      setSelectedPackage(
-        selectedPackage.filter((pkg) => pkg !== clickedPackage)
-      );
-    } else {
-      setSelectedPackage([...selectedPackage, clickedPackage]);
-    }
-  };
-
   const handlePayment = () => {
     if (selectedPackage.length === 0) {
       console.log("Zəhmət olmasa, minimum 1 paket seçin.");
@@ -136,25 +127,42 @@ const Page = () => {
     console.log("Ödəniş həyata keçirilir:", { selectedPackage, price });
   };
 
-  useEffect(() => {
+
+  const handleCheckboxChange = (e) => {
+    const clickedPackage = e.target.value;
+    let updatedPackages = [...selectedPackage];
+  
+    if (selectedPackage.includes(clickedPackage)) {
+      updatedPackages = updatedPackages.filter((pkg) => pkg !== clickedPackage);
+    } else {
+      updatedPackages.push(clickedPackage);
+    }
+  
+    setSelectedPackage(updatedPackages);
+  
+    // Paketlerin fiyatını güncelle
     let total = 0;
-    selectedPackage.forEach((pkg) => {
+    console.log(updatedPackages)
+    updatedPackages.forEach((pkg) => {
       switch (pkg) {
-        case "3azn":
+        case "Standart Paket":
           total += 3;
           break;
-        case "5azn":
+        case "Sport Paket":
           total += 5;
           break;
-        case "10azn":
+        case "Super Paket":
           total += 10;
           break;
         default:
           break;
       }
     });
+  
     setPrice(total);
-  }, [selectedPackage]);
+  };
+  
+
 
   return (
     <div className="container mx-auto p-5 md:p-20">
@@ -274,41 +282,46 @@ const Page = () => {
             </h1>
           </div>
           <div className="flex flex-col justify-between items-center gap-4 mt-5">
-          {[
-  { name: "Standart Paket", price: "3" },
-  { name: "Sport Paket", price: "5" },
-  { name: "Super Paket", price: "10" }
-].map((pkg) => (
-  <div
-    key={pkg.name}
-    className="input input-bordered w-full  md:w-[300px] flex items-center justify-between border border-gray-300 bg-white rounded-lg shadow-md p-7 mb-3"
-  >
-    <input
-      type="checkbox"
-      id={pkg.name}
-      value={pkg.name}
-      disabled={isCheckboxDisabled}
-      onChange={handleCheckboxChange}
-      className="form-checkbox h-5 w-5 text-blue-600"
-    />
-    <label htmlFor={pkg.name} className="flex-1 text-lg ml-3 text-gray-800">
-      {pkg.name}
-    </label>
-    <span className="text-lg font-semibold text-gray-800 px-2 py-1 rounded" style={{ background: '#ffff00' }}>
-      {`${pkg.price} AZN`}
-    </span>
-  </div>
-))}
+            {[
+              { name: "Standart Paket", price: "3" },
+              { name: "Sport Paket", price: "5" },
+              { name: "Super Paket", price: "10" },
+            ].map((pkg) => (
+              <div
+                key={pkg.name}
+                className="input input-bordered w-full  md:w-[300px] flex items-center justify-between border border-gray-300 bg-white rounded-lg shadow-md p-7 mb-3"
+              >
+                <input
+                  type="checkbox"
+                  id={pkg.name}
+                  value={pkg.name}
+                  disabled={isCheckboxDisabled}
+                  onChange={handleCheckboxChange}
+                  className="form-checkbox h-5 w-5 text-blue-600"
+                />
+                <label
+                  htmlFor={pkg.name}
+                  className="flex-1 text-lg ml-3 text-gray-800"
+                >
+                  {pkg.name}
+                </label>
+                <span
+                  className="text-lg font-semibold text-gray-800 px-2 py-1 rounded"
+                  style={{ background: "#ffff00" }}
+                >
+                  {`${pkg.price} AZN`}
+                </span>
+              </div>
+            ))}
 
-
-            <button
-              className={`bg-green-200 text-green-500 p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ${
+            <button 
+            type="button"
+              className={`bg-blue-200 text-blue-500 p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ${
                 !isPaymentEnabled && "opacity-50 cursor-not-allowed"
               }`}
               onClick={handlePayment}
-              disabled={!isPaymentEnabled}
             >
-              Ödəniş et (Cəmi: {price} AZN)
+              Ödəniş et (Mebleg: {price})
             </button>
           </div>
         </div>
