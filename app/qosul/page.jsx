@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import "./page.css";
 import PopupExample from "@/components/PopupExample/PopupExample";
+import axios from "axios";
 
 const Page = () => {
   const [otpVisible, setOtpVisible] = useState(false);
@@ -15,6 +15,9 @@ const Page = () => {
   const [error, setError] = useState(null);
   const [otpSent, setOtpSent] = useState(false);
   const [otpTesdiq, setOtpTesdiq] = useState("");
+  const firstName = useRef();
+  const lastName = useRef();
+  const phones = useRef();
 
   const toggleOtpPopup = () => {
     setOtpVisible((prev) => !prev);
@@ -29,7 +32,6 @@ const Page = () => {
   const onSubmit = async (data) => {
     try {
       const formattedPhoneNumber = "994" + data.prefix + data.phoneNumber;
-
       await sendOtp(formattedPhoneNumber);
       setOtpSent(true);
       setIsCheckboxDisabled(false);
@@ -40,9 +42,8 @@ const Page = () => {
     }
   };
 
-  // AXIOS ILE OTP ISTEYI HELEKI SAXLADIQ
   const sendOtp = async (phoneNumber) => {
-    const url = "/api/sms"; // Proxy ile yönlendirme yapılan endpoint
+    const url = "/api/sms";
     const controlId = `control-${Date.now()}`;
     const otp = Math.floor(1000 + Math.random() * 9000);
     setOtpTesdiq(otp);
@@ -127,22 +128,20 @@ const Page = () => {
     console.log("Ödəniş həyata keçirilir:", { selectedPackage, price });
   };
 
-
   const handleCheckboxChange = (e) => {
     const clickedPackage = e.target.value;
     let updatedPackages = [...selectedPackage];
-  
+
     if (selectedPackage.includes(clickedPackage)) {
       updatedPackages = updatedPackages.filter((pkg) => pkg !== clickedPackage);
     } else {
       updatedPackages.push(clickedPackage);
     }
-  
+
     setSelectedPackage(updatedPackages);
-  
-    // Paketlerin fiyatını güncelle
+
     let total = 0;
-    console.log(updatedPackages)
+    console.log(updatedPackages);
     updatedPackages.forEach((pkg) => {
       switch (pkg) {
         case "Standart Paket":
@@ -158,11 +157,9 @@ const Page = () => {
           break;
       }
     });
-  
+
     setPrice(total);
   };
-  
-
 
   return (
     <div className="container mx-auto p-5 md:p-20">
@@ -180,6 +177,7 @@ const Page = () => {
           </h1>
           <input
             type="text"
+            ref={firstName}
             placeholder="Ad"
             className={`input input-bordered w-[70%] md:w-[300px] border-gray-400 bg-gray-100 mb-2 ${
               errors.name ? "border-red-500" : ""
@@ -200,6 +198,7 @@ const Page = () => {
           )}
           <input
             type="text"
+            ref={lastName}
             placeholder="Soyad"
             className="input input-bordered w-[70%] md:w-[300px] border-gray-400 bg-gray-100 mb-2"
             {...register("surname", {
@@ -240,7 +239,8 @@ const Page = () => {
               <option value="66">066</option>
             </select>
             <input
-              type="text"
+              ref={phones}
+              type="number"
               placeholder="Telefon Nömrəsi"
               className="input input-bordered border-gray-400 w-full bg-gray-100"
               {...register("phoneNumber", {
@@ -314,8 +314,8 @@ const Page = () => {
               </div>
             ))}
 
-            <button 
-            type="button"
+            <button
+              type="button"
               className={`bg-blue-200 text-blue-500 p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ${
                 !isPaymentEnabled && "opacity-50 cursor-not-allowed"
               }`}

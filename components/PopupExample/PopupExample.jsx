@@ -79,13 +79,14 @@ export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
         />
 
         <h2 className="text-xl font-semibold font-serif mt-8">OTP kodu daxil edin</h2>
-        <div className="flex flex-row gap-4 items-center justify-center">
+        <div className="flex flex-row gap-4 font-bold  items-center justify-center">
           {Array.from({ length: 4 }, (_, index) => (
             <input
+         
               key={index}
-              type="text"
+              type="number"
               maxLength="1"
-              className="w-12 h-12 items-center text-center text-sm focus:outline-none border border-solid border-black rounded-md"
+              className="w-12 h-12 items-center text-center text-2xl focus:outline-none border border-solid border-gray-600 rounded-md appearance-none"
               ref={(el) => (otpInputs.current[index] = el)}
               onChange={(e) => handleChange(index, e)}
               onFocus={() => handleInputFocus(index)}
@@ -94,7 +95,7 @@ export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
         </div>
         
         <div className="mt-4">
-          <label className="text-lg">Robot olmadığını təsdiqlə : <span className="captcha-highlight">{randomCaptcha}</span></label>
+          <label className="text-lg">Robot olmadığını təsdiqlə : <span className="bg-yellow-300 bg-opacity-20 p-2 rounded-lg font-light text-green-800 text-opacity-30 tracking-wider filter blur-xs select-none shadow-lg ">{randomCaptcha}</span></label>
           <input
             type="text"
             maxLength="4"
@@ -102,7 +103,7 @@ export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
             onChange={handleCaptchaChange}
             placeholder="Ekrandakı kodu daxil et"
           />
-          {!isCaptchaValid && isCaptchaValid =="" && <span className="text-red-500">Kod yanlışdır.</span>}
+          {!isCaptchaValid && isCaptchaValid == "" && <span className="text-red-500">Kod yanlışdır.</span>}
         </div>
 
         <button

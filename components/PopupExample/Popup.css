@@ -28,11 +28,14 @@
   }
   
 
-  .captcha-highlight {
-    background-color: rgba(255, 215, 0, 0.3); /* Daha şeffaf sarı */
-    padding: 0.25rem;
-    border-radius: 4px;
-    font-weight: 300; /* Daha ince bir font ağırlığı */
-    color: rgba(0, 0, 0, 0.7); /* Daha soluk siyah renk */
-    filter: blur(0.8px);
-  }
+/* Tüm tarayıcılar için okları gizlemek */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox için */
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox için varsayılan stili kaldır */
+}

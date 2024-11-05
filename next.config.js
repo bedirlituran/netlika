@@ -7,12 +7,15 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/sms', // Frontend'den bu route'a istek yapılacak
-        destination: 'https://sendsms.az/smxml/api', // Bu URL'ye yönlendirilecek
+        source: '/api/sms',
+        destination: 'https://sendsms.az/smxml/api', 
+      },
+      {
+        source: '/api/gammanet', 
+        destination: 'http://api.gammanet.az',
       },
     ];
   },
 };
 
 module.exports = nextConfig;
-

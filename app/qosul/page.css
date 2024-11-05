@@ -11,3 +11,13 @@
     opacity: 0; /* Span gizlenir */
   }
 
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox için */
+  input[type="number"] {
+    -moz-appearance: textfield; /* Firefox için varsayılan stili kaldır */
+  }
