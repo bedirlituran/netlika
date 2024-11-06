@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import "./page.css";
 import PopupExample from "@/components/PopupExample/PopupExample";
 import axios from "axios";
+import CryptoJS from "crypto-js";
 
 const Page = () => {
   const [otpVisible, setOtpVisible] = useState(false);
@@ -26,22 +27,48 @@ const Page = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
-    try {
-      const formattedPhoneNumber = "994" + data.prefix + data.phoneNumber;
-      await sendOtp(formattedPhoneNumber);
-      setOtpSent(true);
-      setIsCheckboxDisabled(false);
-      setIsPaymentEnabled(true);
-      toggleOtpPopup();
-    } catch (error) {
-      setError("OTP göndərmə xətası. Zəhmət olmasa, yenidən cəhd edin.");
-    }
+    sendApi();
   };
 
+  const sendApi = async () => {
+    const firstNameValue = "turan";
+    const lastNameValue = "krnan";
+    const phoneNum = "3030303";
+    const key = "Key4IPTV!";  // API anahtarı
+    const prefix = watch("prefix");  // Prefix seçeneği
+  
+    const CUSTOMER = firstNameValue + lastNameValue;
+    const PHONE_NUM = prefix + phoneNum;
+    
+    // CHECKSUM hesaplaması
+    const CHECKSUM = CryptoJS.MD5(CUSTOMER + PHONE_NUM + key).toString();
+    
+    // API URL, burada Next.js proxy kullanılacak
+    const apiUrl = `/api?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
+  
+    try {
+      const response = await axios.get(apiUrl);  // /api proxy'sini kullanıyoruz
+      console.log("API Yanıtı:", response.data);
+    } catch (error) {
+      // Hata durumu kontrolü
+      if (error.response) {
+        console.error("Sunucu Hatası: ", error.response.data);
+        console.error("Hata Kodu: ", error.response.status);
+      } else if (error.request) {
+        console.error("Sunucuya İstek Gönderilemedi: ", error.request);
+      } else {
+        console.error("Hata: ", error.message);
+      }
+    }
+  };
+  
+  
+  
   const sendOtp = async (phoneNumber) => {
     const url = "/api/sms";
     const controlId = `control-${Date.now()}`;
@@ -175,6 +202,7 @@ const Page = () => {
           <h1 className="font-bold text-center md:text-3xl mb-5 md:mb-10">
             Şəxsi məlumatlarını qeyd et
           </h1>
+
           <input
             type="text"
             ref={firstName}
@@ -266,6 +294,7 @@ const Page = () => {
           {errors.phoneNumber && (
             <span className="text-red-500">{errors.phoneNumber.message}</span>
           )}
+
           <button
             type="submit"
             className="bg-blue-200 text-blue-500 p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all"
