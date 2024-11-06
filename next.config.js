@@ -6,13 +6,11 @@ const nextConfig = {
   },
   async rewrites() {
     return [
+    
       {
-        source: '/api',  // /api ile başlayan her isteği
-        destination: 'http://api.gammanet.az:8080',  // Gerçek API adresine yönlendir
-      },
-      {
+        // /api/sms adresi ile gelen istekler 'sendsms.az' yönlendirilir
         source: '/api/sms',
-        destination: 'https://sendsms.az/smxml/api',  // SMS API
+        destination: 'https://sendsms.az/smxml/api',
       },
     ];
   },
