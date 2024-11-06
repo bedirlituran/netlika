@@ -7,8 +7,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/:path*',  // /api ile başlayan tüm isteklere
-        destination: 'http://api.gammanet.az:8080/:path*',  // Gerçek API adresine yönlendirilmeli
+        source: '/api',  // /api ile başlayan her isteği
+        destination: 'http://api.gammanet.az:8080',  // Gerçek API adresine yönlendir
       },
       {
         source: '/api/sms',

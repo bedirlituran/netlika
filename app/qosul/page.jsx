@@ -44,15 +44,16 @@ const Page = () => {
   
     const CUSTOMER = firstNameValue + lastNameValue;
     const PHONE_NUM = prefix + phoneNum;
-    
+  
     // CHECKSUM hesaplaması
     const CHECKSUM = CryptoJS.MD5(CUSTOMER + PHONE_NUM + key).toString();
-    
+  
     // API URL, burada Next.js proxy kullanılacak
     const apiUrl = `/api?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
   
     try {
-      const response = await axios.get(apiUrl);  // /api proxy'sini kullanıyoruz
+      // Burada /api proxy'sini kullanıyoruz, Next.js yönlendirme yapacak
+      const response = await axios.get(apiUrl);
       console.log("API Yanıtı:", response.data);
     } catch (error) {
       // Hata durumu kontrolü
