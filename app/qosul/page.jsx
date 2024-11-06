@@ -46,7 +46,7 @@ const Page = () => {
     const CHECKSUM = CryptoJS.MD5(CUSTOMER + PHONE_NUM + key).toString();
   
     // API URL, burada Next.js proxy kullanılacak
-    const apiUrl = `http://api.gammanet.az:8080?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
+    const apiUrl = `https://api.gammanet.az:8080?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
   
     try {
       const response = await axios.get(apiUrl);
