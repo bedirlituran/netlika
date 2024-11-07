@@ -40,22 +40,36 @@ const Page = () => {
   
     const key = "Key4IPTV!"; // API anahtarı
     const CUSTOMER = firstName + lastName;
-    const PHONE_NUM = prefix + phoneNumber;
+    const PHONE_NUM = watch("prefix") + prefix + phoneNumber;
   
     // CHECKSUM hesaplaması
     const CHECKSUM = CryptoJS.MD5(CUSTOMER + PHONE_NUM + key).toString();
   
     // API URL, burada Next.js proxy kullanılacak
-    const apiUrl = `http://api.gammanet.az:8080?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
+    const apiUrl = `/api/gammanet?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
+
   
     try {
-      const response = await axios.get(apiUrl);
+      const response = await axios.get(apiUrl, {
+        headers: {
+          'Content-Type': 'application/json',  // İçerik türü
+          'Authorization': `Bearer YOUR_API_TOKEN`, // Eğer API token gereksinimi varsa
+        },
+        withCredentials: true,  // Kimlik bilgileri ile istek gönder
+      });
+  
+      // Telefon numarasını formatla
       const formattedPhoneNumber = "994" + data.prefix + data.phoneNumber;
-          await sendOtp(formattedPhoneNumber);
-          setOtpSent(true);
-          setIsCheckboxDisabled(false);
-          setIsPaymentEnabled(true);
-          toggleOtpPopup();
+  
+      // OTP gönderme işlemi
+      if(response.data) {
+        await sendOtp(formattedPhoneNumber);
+      setOtpSent(true);
+      setIsCheckboxDisabled(false);
+      setIsPaymentEnabled(true);
+      toggleOtpPopup();
+      }
+  
       console.log("API Yanıtı:", response.data);
     } catch (error) {
       if (error.response) {
@@ -71,7 +85,6 @@ const Page = () => {
   
  
   const sendOtp = async (phoneNumber) => {
-    const url = "/api/sms";
     const controlId = `control-${Date.now()}`;
     const otp = Math.floor(1000 + Math.random() * 9000);
     setOtpTesdiq(otp);
@@ -97,7 +110,7 @@ const Page = () => {
 
     try {
       // Artık proxy üzerinden yönlendirme yapılacak
-      const response = await axios.post(url, xmlData, {
+      const response = await axios.post('/api/sms', xmlData, {
         headers: {
           "Content-Type": "application/xml",
           Accept: "application/xml",
@@ -122,7 +135,7 @@ const Page = () => {
       };
 
       try {
-        const response = await axios.post(url, jsonData, {
+        const response = await axios.post('/api/sms', jsonData, {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",

@@ -6,13 +6,56 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-    
+      // Gammanet API'yi yönlendirme
       {
-        // /api/sms adresi ile gelen istekler 'sendsms.az' yönlendirilir
-        source: '/api/sms',
-        destination: 'https://sendsms.az/smxml/api',
+        source: '/api/gammanet/:path*',  // API yolu
+        destination: 'http://api.gammanet.az:8080/:path*', // Gammanet API URL'si
       },
-    ];
+      // SMS API'yi yönlendirme
+      {
+        source: '/api/sms/:path*',  // API yolu
+        destination: 'https://sendsms.az/smxml/api/:path*', // SMS API URL'si
+      },
+    ]
+  },
+
+  async headers() {
+    return [
+      {
+        source: '/api/gammanet/:path*',  // Gammanet API için başlıklar
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',  // Tüm domainlerden erişime izin ver
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE, OPTIONS',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization',
+          },
+        ],
+      },
+      {
+        source: '/api/sms/:path*',  // SMS API için başlıklar
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',  // Tüm domainlerden erişime izin ver
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'POST, OPTIONS',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization',
+          },
+        ],
+      },
+    ]
   },
 };
 
