@@ -36,11 +36,11 @@ const Page = () => {
   };
   
   const sendApi = async (data) => {
-    const { name: firstName, surname: lastName, phoneNumber, prefix } = data;
+    const { name: firstName, surname: lastName, phoneNumber } = data;
   
     const key = "Key4IPTV!"; // API anahtarı
     const CUSTOMER = firstName + lastName;
-    const PHONE_NUM = watch("prefix") + prefix + phoneNumber;
+    const PHONE_NUM = watch("prefix") + phoneNumber;
   
     // CHECKSUM hesaplaması
     const CHECKSUM = CryptoJS.MD5(CUSTOMER + PHONE_NUM + key).toString();
