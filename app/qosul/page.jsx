@@ -32,59 +32,13 @@ const Page = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await sendApi(data); // data nesnesini sendApi fonksiyonuna geçiriyoruz
+    await sendOtp(data); // OTP gönderimi önce yapılacak
+    await sendApi(data); // OTP başarılı ise API'ye veri gönderilecek
   };
-  
-  const sendApi = async (data) => {
-    const { name: firstName, surname: lastName, phoneNumber } = data;
-  
-    const key = "Key4IPTV!"; // API anahtarı
-    const CUSTOMER = firstName + lastName;
-    const PHONE_NUM = watch("prefix") + phoneNumber;
-  
-    // CHECKSUM hesaplaması
-    const CHECKSUM = CryptoJS.MD5(CUSTOMER + PHONE_NUM + key).toString();
-  
-    // API URL, burada Next.js proxy kullanılacak
-    const apiUrl = `/api/gammanet?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
 
-  
-    try {
-      const response = await axios.get(apiUrl, {
-        headers: {
-          'Content-Type': 'application/json',  // İçerik türü
-          'Authorization': `Bearer YOUR_API_TOKEN`, // Eğer API token gereksinimi varsa
-        },
-        withCredentials: true,  // Kimlik bilgileri ile istek gönder
-      });
-  
-      // Telefon numarasını formatla
-      const formattedPhoneNumber = "994" + data.prefix + data.phoneNumber;
-  
-      // OTP gönderme işlemi
-      if(response.data) {
-        await sendOtp(formattedPhoneNumber);
-      setOtpSent(true);
-      setIsCheckboxDisabled(false);
-      setIsPaymentEnabled(true);
-      toggleOtpPopup();
-      }
-  
-      console.log("API Yanıtı:", response.data);
-    } catch (error) {
-      if (error.response) {
-        console.error("Sunucu Hatası: ", error.response.data);
-        console.error("Hata Kodu: ", error.response.status);
-      } else if (error.request) {
-        console.error("Sunucuya İstek Gönderilemedi: ", error.request);
-      } else {
-        console.error("Hata: ", error.message);
-      }
-    }
-  };
-  
- 
-  const sendOtp = async (phoneNumber) => {
+
+  const sendOtp = async (data) => {
+    const formattedPhoneNumber = "994" + data.prefix + data.phoneNumber;
     const controlId = `control-${Date.now()}`;
     const otp = Math.floor(1000 + Math.random() * 9000);
     setOtpTesdiq(otp);
@@ -102,14 +56,14 @@ const Page = () => {
               <isbulk>false</isbulk>
           </head>
           <body>
-              <msisdn>${phoneNumber}</msisdn>
+              <msisdn>${formattedPhoneNumber}</msisdn>
               <message>Your OTP code is ${otp}</message>
           </body>
       </request>
     `;
 
     try {
-      // Artık proxy üzerinden yönlendirme yapılacak
+      // Proxy üzerinden OTP gönderme işlemi
       const response = await axios.post('/api/sms', xmlData, {
         headers: {
           "Content-Type": "application/xml",
@@ -119,12 +73,16 @@ const Page = () => {
 
       console.log("XML cavabı:", response.data);
       setOtpCode(otp.toString());
+      setOtpSent(true);
+      setIsCheckboxDisabled(false);
+      setIsPaymentEnabled(true);
+      toggleOtpPopup(); // OTP popup'ını aç
     } catch (error) {
       console.error("XML istəyi uğursuz oldu:", error);
 
       // Alternatif JSON isteği
       const jsonData = {
-        msisdn: phoneNumber,
+        msisdn: formattedPhoneNumber,
         message: `Your OTP code is ${otp}`,
         controlid: controlId,
         login: "gammanet",
@@ -144,8 +102,47 @@ const Page = () => {
 
         console.log("JSON cavabı:", response.data);
         setOtpCode(otp.toString());
+        setOtpSent(true);
+        setIsCheckboxDisabled(false);
+        setIsPaymentEnabled(true);
+        toggleOtpPopup(); // OTP popup'ını aç
       } catch (error) {
-        console.error("uğursuz oldu:", error);
+        console.error("OTP göndərmə uğursuz oldu:", error);
+      }
+    }
+  };
+
+  const sendApi = async (data) => {
+    const { name: firstName, surname: lastName, phoneNumber } = data;
+  
+    const key = "Key4IPTV!"; // API anahtarı
+    const CUSTOMER = firstName + lastName;
+    const PHONE_NUM = watch("prefix") + phoneNumber;
+  
+    // CHECKSUM hesaplaması
+    const CHECKSUM = CryptoJS.MD5(CUSTOMER + PHONE_NUM + key).toString();
+  
+    // API URL, burada Next.js proxy kullanılacak
+    const apiUrl = `/api/gammanet?CUSTOMER=${CUSTOMER}&PHONE_NUM=${PHONE_NUM}&CS=${CHECKSUM}`;
+  
+    try {
+      const response = await axios.get(apiUrl, {
+        headers: {
+          'Content-Type': 'application/json',  // İçerik türü
+          'Authorization': `Bearer YOUR_API_TOKEN`, // Eğer API token gereksinimi varsa
+        },
+        withCredentials: true,  // Kimlik bilgileri ile istek gönder
+      });
+  
+      console.log("API Yanıtı:", response.data);
+    } catch (error) {
+      if (error.response) {
+        console.error("Sunucu Hatası: ", error.response.data);
+        console.error("Hata Kodu: ", error.response.status);
+      } else if (error.request) {
+        console.error("Sunucuya İstek Gönderilemedi: ", error.request);
+      } else {
+        console.error("Hata: ", error.message);
       }
     }
   };
@@ -155,11 +152,16 @@ const Page = () => {
       setIsCheckboxDisabled(false);
       setIsPaymentEnabled(true);
       toggleOtpPopup();
-      setError(null); // Xəta təmizlənir
+      setError(null); // Clear any previous errors
     } else {
-      setError("Səhv OTP kodu.");
+      setError("Səhv OTP kodu."); // Show error message if OTP is incorrect
     }
   };
+  
+
+  
+ 
+
 
   const handlePayment = () => {
     if (selectedPackage.length === 0) {
