@@ -86,7 +86,7 @@ const Page = () => {
         message: `Your OTP code is ${otp}`,
         controlid: controlId,
         login: "gammanet",
-        password: "G!.23Ea",
+        password: "!G!.23eA9112",
         title: "GAMMANET",
         scheduled: "NOW",
         isbulk: false,
@@ -159,9 +159,6 @@ const Page = () => {
   };
   
 
-  
- 
-
 
   const handlePayment = () => {
     if (selectedPackage.length === 0) {
@@ -189,12 +186,6 @@ const Page = () => {
       switch (pkg) {
         case "Standart Paket":
           total += 3;
-          break;
-        case "Sport Paket":
-          total += 5;
-          break;
-        case "Super Paket":
-          total += 10;
           break;
         default:
           break;
@@ -326,9 +317,8 @@ const Page = () => {
           </div>
           <div className="flex flex-col justify-between items-center gap-4 mt-5">
             {[
-              { name: "Standart Paket", price: "3" },
-              { name: "Sport Paket", price: "5" },
-              { name: "Super Paket", price: "10" },
+              { name: "Standart Paket", price: "10" },
+             
             ].map((pkg) => (
               <div
                 key={pkg.name}

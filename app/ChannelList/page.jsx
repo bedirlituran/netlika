@@ -1,7 +1,4 @@
-// components/ChannelList.js
-"use client";
-import { motion } from 'framer-motion';
-import { NextSeo } from 'next-seo';
+
 
 const channels = [
   { id: 1, name: 'Aztv' },
@@ -328,15 +325,7 @@ const channels = [
 const ChannelList = () => {
   return (
 
-    <motion.div className="container mx-auto mt-8 mb-8 dark:text-black "  initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}>
-      <NextSeo
-        title="TV Kanal Siyahısı"
-        description="GammaNet TV kanal siyahısı"
-        
-
-        />
+    <div className="container mx-auto mt-8 mb-8 dark:text-black">
       <h1 className="text-2xl font-bold mb-4">TV Kanal Siyahısı</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {channels.map((channel) => (
@@ -348,7 +337,7 @@ const ChannelList = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
