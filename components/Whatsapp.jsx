@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
 
   return (
     <div 
-    className="font-custom text-center p-5 rounded-full text-white fixed bottom-7 right-7 flex w-[70px] h-[70px] items-center justify-center cursor-pointer hover:bg-green-500 hover:shadow-2xl hover:scale-110 transition-all duration-500 z-50"
+    className="font-custom text-center bg-green-400 p-5 rounded-full text-white fixed bottom-7 right-7 flex w-[70px] h-[70px] items-center justify-center cursor-pointer hover:bg-green-500 hover:shadow-2xl hover:scale-110 transition-all duration-500 z-50"
     onClick={openWhatsApp}>
     <FaWhatsapp size={70} />
   </div>

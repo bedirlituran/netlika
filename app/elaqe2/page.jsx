@@ -1,13 +1,9 @@
-// pages/index.js
-"use client";
 import React from 'react';
-import { NextSeo } from 'next-seo';
 
 const HomePage = () => {
   return (
     <div>
     <div className=" dark:bg-gray-900 h-screen  flex flex-col items-center justify-around lg:flex lg:p-20  md:p-8 ">
-      <NextSeo title="Bizimlə əlaqə" description='Gammanet ile əlaqə'/>
       <div className="container mx-auto mt-10">
         <div className="text-center">
           <h1 className="text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-10 font-semibold text-gray-800 dark:text-white">
@@ -24,7 +20,7 @@ const HomePage = () => {
               </svg>
             </span>
             <h2 className="mt-4 text-lg md:text-xl font-medium text-red-500 dark:text-white">İP TV</h2>
-            <p className="mt-2 text-gray-500 dark:text-gray-400">077 223 44 71<br />077 223 44 35 <br/>077 466 05 05</p>
+            <p className="mt-2 text-gray-500 dark:text-gray-400">077 466 05 05</p>
           </div>
 
           <div className="text-center">
@@ -35,18 +31,18 @@ const HomePage = () => {
             </span>
             <h2 className="mt-4 text-lg md:text-xl font-medium text-red-500 dark:text-white">Kabel Tv & Internet</h2>
           
-            <p className="mt-2 text-gray-500 dark:text-gray-400">-<br></br>077 610 48 88<br />012 310 48 88</p>
+            <p className="mt-2 text-gray-500 dark:text-gray-400">077 244 05 05<br></br>012 310 48 88</p>
           </div>
 
           <div className="text-center">
-            <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+            <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-green-200">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
             </span>
             <h2 className="mt-4 text-lg md:text-xl font-medium text-red-500 dark:text-white">Email</h2>
           
-            <p className="mt-2 text-gray-500 dark:text-gray-400">-<br></br>email əlaqə<br></br>gamma_net@mail.ru</p>
+            <p className="mt-2 text-gray-500 dark:text-gray-400">gamma_net@mail.ru</p>
           </div>
         </div>
       </div>

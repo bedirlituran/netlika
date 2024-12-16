@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
+import React,{useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { FaHome , FaHandsHelping } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
 import { HiPhone } from "react-icons/hi2";

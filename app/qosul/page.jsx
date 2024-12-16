@@ -43,24 +43,24 @@ const Page = () => {
     const otp = Math.floor(1000 + Math.random() * 9000);
     setOtpTesdiq(otp);
 
-    const xmlData = `
-      <request>
-          <head>
-              <operation>submit</operation>
-              <login>gammanet</login>
-              <password>G!.23Ea</password>
-              <controlid>${controlId}</controlid>
-              <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
-              <title>GAMMANET</title>
-              <scheduled>NOW</scheduled>
-              <isbulk>false</isbulk>
-          </head>
-          <body>
-              <msisdn>${formattedPhoneNumber}</msisdn>
-              <message>Your OTP code is ${otp}</message>
-          </body>
-      </request>
-    `;
+    // const xmlData = `
+    //   <request>
+    //       <head>
+    //           <operation>submit</operation>
+    //           <login>gammanet</login>
+    //           <password>G!.23Ea</password>
+    //           <controlid>${controlId}</controlid>
+    //           <bulkmessage>Sizin birdəfəlik şifrəniz ${otp}</bulkmessage>
+    //           <title>GAMMANET</title>
+    //           <scheduled>NOW</scheduled>
+    //           <isbulk>false</isbulk>
+    //       </head>
+    //       <body>
+    //           <msisdn>${formattedPhoneNumber}</msisdn>
+    //           <message>Your OTP code is ${otp}</message>
+    //       </body>
+    //   </request>
+    // `;
 
     try {
       // Proxy üzerinden OTP gönderme işlemi
@@ -196,7 +196,7 @@ const Page = () => {
   };
 
   return (
-    <div className="container mx-auto p-5 md:p-20">
+    <div className="container mx-auto p-5 md:p-20 dark:text-white">
       <PopupExample
         isVisible={otpVisible}
         otpTesdiq={otpTesdiq}
@@ -204,9 +204,9 @@ const Page = () => {
         onSubmit={handleOtpSubmit}
       />
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col items-center justify-start p-5 md:p-24 text-black shadow-2xl border border-gray-400 rounded-xl">
-          <h1 className="font-bold text-center md:text-3xl mb-5 md:mb-10">
+      <form onSubmit={handleSubmit(onSubmit)} className="dark:text-white">
+        <div className="flex flex-col items-center justify-start p-5 md:p-24 text-black shadow-2xl border dark:text-white border-gray-400 rounded-xl">
+          <h1 className="font-bold text-center md:text-3xl dark:text-white mb-5 md:mb-10">
             Şəxsi məlumatlarını qeyd et
           </h1>
           <input
@@ -315,7 +315,7 @@ const Page = () => {
               Tarif paketini seç
             </h1>
           </div>
-          <div className="flex flex-col justify-between items-center gap-4 mt-5">
+          <div className="flex flex-col justify-between dark:text-white items-center gap-4 mt-5">
             {[
               { name: "Standart Paket", price: "10" },
              
@@ -349,7 +349,7 @@ const Page = () => {
 
             <button
               type="button"
-              className={`bg-blue-200 text-blue-500 p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ${
+              className={`bg-blue-200 text-blue-500 dark:text-white p-4 text-xl font-bold rounded-2xl shadow-md hover:opacity-80 transition-all ${
                 !isPaymentEnabled && "opacity-50 cursor-not-allowed"
               }`}
               onClick={handlePayment}
