@@ -1,12 +1,9 @@
 // components/IPTVComponent.js
-"use client";
 import React from 'react';
-import { NextSeo } from 'next-seo';
 
 const IPTVComponent = () => {
   return (
     <div className="font-custom  p-8 h-screen rounded-md shadow-md dark:text-black" >
-      <NextSeo title="İPTV" description="Gammanet İPTV xidməti" />
       <h1 className="text-3xl font-bold mb-6">Gammanet - İPTV xidməti </h1>
       <p className="text-lg mb-4">
         Gammanet, İPTV (Internet Protocol Television) təqdim edən bir şirkətdir. İPTV, internet protokolu əsasında təqdim edilən televiziyaya verilən addır.

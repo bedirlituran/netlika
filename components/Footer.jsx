@@ -1,5 +1,7 @@
 import React from 'react';
 import Sosial from './Sosial';
+import Link from "next/link";
+
 
 const Footer = () => {
   return (
@@ -11,6 +13,7 @@ const Footer = () => {
         </p>        
       </div>
       <div className='mt-4'><Sosial /></div>
+     <Link href="/Privacy_policy">Məxfilik Siyasəti</Link>
     </footer>
     </div>
  

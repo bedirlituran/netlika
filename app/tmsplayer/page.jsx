@@ -1,7 +1,5 @@
-// pages/index.js
-"use client";
+
 import React from "react";
-import { NextSeo } from "next-seo";
 
 const HomePage = () => {
   const handleDownloadClick = () => {
@@ -14,11 +12,8 @@ const HomePage = () => {
   };
 
   return (
-    <>
-      <NextSeo
-        title="Gammanet TV TMSPlayer Endirme Linkləri"
-        description="TMS Player Endir"
-      />
+    <div>
+     
       <div className="min-h-screen  flex items-start justify-center">
         <div className="p-8  max-w-2xl w-full md:mt-36">
           <h1 className="text-4xl font-bold mb-6 text-center">
@@ -41,7 +36,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

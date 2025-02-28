@@ -10,7 +10,7 @@ const Card4 = () => {
       </h1>
       <div>
         <Image
-          src="/image/xidmet3.webp"
+          src="/image/xidmet3.png"
           width={350}
           height={350}
           alt=""

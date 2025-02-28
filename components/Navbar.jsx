@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FaHome , FaHandsHelping } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
 import { HiPhone } from "react-icons/hi2";
-import { motion } from "framer-motion";
 import { PiTelevisionFill } from "react-icons/pi";
 import { SiPicartodottv } from "react-icons/si";
 import { MdCastConnected } from "react-icons/md";
@@ -43,7 +42,7 @@ const Navbar = () => {
         <nav className="flex justify-between items-center font-medium lg:flex lg:justify-between lg:items-center p-3 min-w-full">
           <Link href="/">
           <Image
-        src="/image/logo2.webp"
+        src="/image/logo2.png"
         width={120} // Resmin genişliği
         height={40} // Resmin yüksekliği
         alt="Gammanet.az"
@@ -178,11 +177,9 @@ const Navbar = () => {
           </div>
         </nav>
         {isClick && (
-          <motion.div
-            className="absolute lg:hidden z-50 top-18 left-0 right-0  h-auto p-4  w-full translate-x-0 transition-translate duration-1000" style={{ 'background': 'yellow' }}
-            initial={{ opacity: 0, transform: "translateX(100%)" }}
-            animate={{ opacity: 1, transform: "translateX(0%)" }}
-            transition={{ duration: 0.5 }}>
+          <div
+          onClick={()=>setisClick(false)}
+            className="absolute lg:hidden z-50 top-18 left-0 right-0  h-auto p-4  w-full translate-x-0 transition-translate duration-1000" style={{ 'background': 'yellow' }}>
             <div className=" px-2 pt-2 pb-3 space-y-3 sm:px-3 top-18  ">
               <ul className="space-y-6 font-bold  flex flex-col items-center text-start justify-center border border-red-200 rounded-2xl p-4">
                 <li className="flex gap-2">
@@ -258,7 +255,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
   );

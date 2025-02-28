@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
@@ -16,10 +17,8 @@
     "crypto-js": "^4.2.0",
     "daisyui": "^4.12.14",
     "formik": "^2.4.6",
-    "framer-motion": "^10.18.0",
     "leaflet": "^1.9.4",
     "next": "14.0.4",
-    "next-seo": "^6.4.0",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

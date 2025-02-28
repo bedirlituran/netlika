@@ -63,7 +63,7 @@ export default function PopupExample({ isVisible, togglePopup, otpTesdiq }) {
     <div className="popup">
       <div className="popup-content">
         <Image
-          src="/image/logo2.webp"
+          src="/image/logo2.png"
           width={120}
           height={80}
           alt="Gammanet.az"

@@ -13,7 +13,7 @@ const Header = () => {
         </svg>
         <img
           className="object-cover object-center  w-full h-[300px] rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-[440px]"
-          src="/image/slide1.webp"
+          src="/image/slide1.png"
           alt=""
         />
       </div>
